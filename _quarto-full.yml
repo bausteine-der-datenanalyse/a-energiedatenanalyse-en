@@ -1,0 +1,6 @@
+project:  
+  output-dir: output/book/
+book:
+  chapters: 
+    - index.qmd
+    - skript/energiedatenanalyse.qmd
