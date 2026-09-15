@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>1&nbsp; Energy Data Analysis – Anwendungsbaustein Energiedatenanalyse</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -59,7 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -89,15 +94,14 @@ div.csl-indent {
 <link href="../skript/00-bilder/favicon_bcd_new.svg" rel="icon" type="image/svg+xml">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e0b6cb0f66c6c3f8d27641e5d4bcc9c8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3a79c8b4f024afbc6085355c069670f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -130,7 +134,7 @@ div.csl-indent {
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -298,7 +302,7 @@ window.Quarto = {
 
 <section id="background" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Background</h1>
-<p>Electric power is generated in power plants and transported via the power grid to electricity consumers. Power generation and consumption must always be balanced. The share of weather-dependent renewable generation is increasing, but electricity cannot yet be stored economically on a large scale. In 2023, pumped-storage power plants in Germany, with a capacity of 37.4 GWh <span class="citation" data-cites="Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland">(<a href="#ref-Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland" role="doc-biblioref">Heimerl und Kohler 2017</a>, p.&nbsp;77)</span>, fed in 11.1 TWh of electricity, which corresponded to 2.4 percent of Germany’s total electricity consumption of 458.3 TWh <span class="citation" data-cites="energy-charts-strom">(<a href="#ref-energy-charts-strom" role="doc-biblioref">Fraunhofer Institut für Solare Energiesysteme ISE o.&nbsp;J.</a>)</span>. Power plant scheduling and storage sizing based on generation and consumption data is therefore a relevant application area for data analysis.<br>
+<p>Electric power is generated in power plants and transported via the power grid to electricity consumers. Power generation and consumption must always be balanced. The share of weather-dependent renewable generation is increasing, but electricity cannot yet be stored economically on a large scale. In 2023, pumped-storage power plants in Germany, with a capacity of 37.4 GWh <span class="citation" data-cites="Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland">(<a href="#ref-Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland" role="doc-biblioref">Heimerl und Kohler 2017</a>, p.&nbsp;77)</span>, fed in 11.1 TWh of electricity, which corresponded to 2.4 percent of Germany’s total electricity consumption of 458.3 TWh <span class="citation" data-cites="energy-charts-strom">(<a href="#ref-energy-charts-strom" role="doc-biblioref">Fraunhofer Institut für Solare Energiesysteme ISE, o.&nbsp;J.</a>)</span>. Power plant scheduling and storage sizing based on generation and consumption data is therefore a relevant application area for data analysis.<br>
 The Federal Network Agency publishes, among other things, data on electricity generation, consumption, and wholesale prices on <a href="https://www.smard.de/home/downloadcenter/download-marktdaten/">https://www.smard.de/</a>. (Note: Power plant data is available for generation units with an installed generation capacity of at least 100 MW.)</p>
 </section>
 <section id="reading-the-data" class="level1" data-number="3">
@@ -1566,7 +1570,7 @@ ERROR: Negative values detected in generation data.
 </section>
 <section id="sec-exploratory-data-analysis" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Exploratory Data Analysis</h1>
-<p>Exploratory data analysis means asking questions about the available data and answering them using data analysis methods. The insights gained in this way can help refine the questions or generate new ones. It is therefore an iterative process, aimed primarily at gaining a deeper understanding of the data. <span class="citation" data-cites="R-for-Data-Science">(<a href="#ref-R-for-Data-Science" role="doc-biblioref">Wickham, Çetinkaya-Rundel, und Grolemund 2023, Kap. 10</a> Exploratory data analysis)</span></p>
+<p>Exploratory data analysis means asking questions about the available data and answering them using data analysis methods. The insights gained in this way can help refine the questions or generate new ones. It is therefore an iterative process, aimed primarily at gaining a deeper understanding of the data. <span class="citation" data-cites="R-for-Data-Science">(<a href="#ref-R-for-Data-Science" role="doc-biblioref">Wickham u.&nbsp;a. 2023, Kap. 10</a> Exploratory data analysis)</span></p>
 <section id="background-marginal-electricity-analysis" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="background-marginal-electricity-analysis"><span class="header-section-number">6.1</span> Background: Marginal Electricity Analysis</h2>
 <p>In the present case, the exploratory examination of the dataset is guided by the question of which producers supplied electricity to <em>additionally</em> fill the pumped storage facilities beyond meeting the grid demand. The aim is to determine which electricity producers, at the times when the pumped storage plants were being filled, were capable of providing additional output. This additional electricity can be referred to briefly as marginal electricity.</p>
@@ -3146,10 +3150,12 @@ The more frequently charging and discharging cycles alternate, the smaller the r
 <dl>
 <dt>Partial Cycles</dt>
 <dd>
-The distribution of occurring partial cycles also reduces the required storage capacity.
+The distribution of occurring partial cycles also reduces the required storage capacity.<br>
+
 </dd>
 <dd>
-If the sum of renewable surplus production is smaller than the residual load that the storage needs to cover, the required storage capacity corresponds to the minimum of the cumulative sum of the residual load, provided it is never set above 0 (exceeding this point would indicate the moment when the storage is empty).
+If the sum of renewable surplus production is smaller than the residual load that the storage needs to cover, the required storage capacity corresponds to the minimum of the cumulative sum of the residual load, provided it is never set above 0 (exceeding this point would indicate the moment when the storage is empty).<br>
+
 </dd>
 <dd>
 If the sum of renewable surplus production is greater than the residual load that the storage needs to cover, the required storage capacity corresponds to the maximum of the cumulative sum of the residual load, provided it is never set below 0 (falling below this point would indicate the moment when the storage is oversized).
@@ -3658,10 +3664,12 @@ Number of cycles year 2: 8.79</code></pre>
 <dl>
 <dt>Capping of Generation Peaks</dt>
 <dd>
-Capping of generation peaks is a way to reduce the required storage size. Limiting the charging leads to better utilization of storage capacity and a higher number of cycles.
+Capping of generation peaks is a way to reduce the required storage size. Limiting the charging leads to better utilization of storage capacity and a higher number of cycles.<br>
+
 </dd>
 <dd>
-In the upper example, the storage size is dimensioned according to the maximum renewable surplus production. The storage thus reaches 1.5 cycles.
+In the upper example, the storage size is dimensioned according to the maximum renewable surplus production. The storage thus reaches 1.5 cycles.<br>
+
 </dd>
 <dd>
 In the lower example, the storage is dimensioned smaller. The storage reaches 2 cycles.
@@ -4971,15 +4979,15 @@ Tipp&nbsp;9.1: Solutions
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-energy-charts-strom" class="csl-entry" role="listitem">
 Fraunhofer Institut für Solare Energiesysteme ISE. o.&nbsp;J. <span>„Öffentliche Nettostromerzeugung in Deutschland“</span>. Zugegriffen 3. Juni 2024. <a href="https://energy-charts.info/charts/energy/chart.htm?l=de&amp;c=DE&amp;chartColumnSorting=default&amp;year=-1&amp;interval=year&amp;legendItems=lz1zb&amp;source=public">https://energy-charts.info/charts/energy/chart.htm?l=de&amp;c=DE&amp;chartColumnSorting=default&amp;year=-1&amp;interval=year&amp;legendItems=lz1zb&amp;source=public</a>.
 </div>
 <div id="ref-Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland" class="csl-entry" role="listitem">
-Heimerl, Stephan, und Beate Kohler. 2017. <span>„Aktueller Stand der Pumpspeicherkraftwerke in Deutschland“</span>. WasserWirtschaft. 2017. <a href="https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf">https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf</a>.
+Heimerl, Stephan, und Beate Kohler. 2017. <span>„Aktueller Stand der Pumpspeicherkraftwerke in Deutschland“</span>. Bd. 10. WasserWirtschaft. <a href="https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf">https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf</a>.
 </div>
 <div id="ref-R-for-Data-Science" class="csl-entry" role="listitem">
-Wickham, Hadley, Mine Çetinkaya-Rundel, und Garrett Grolemund. 2023. <span>„R for data science: Import, tidy, transform, visualize, and model data“</span>. Beijing; Boston; Farnham; Sebastopol; Tokyo: O’Reilly. 2023. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
+Wickham, Hadley, Mine Çetinkaya-Rundel, und Garrett Grolemund. 2023. <span>„R for data science: Import, tidy, transform, visualize, and model data“</span>. 2nd edition. O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
 </div>
 </section>
