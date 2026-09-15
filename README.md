@@ -1,4 +1,4 @@
 # a-energiedatenanalyse
-Anwendungsbaustein Energiedatenanalyse
+Application Module Energy Data Analysis
 
-https://bausteine-der-datenanalyse.github.io/a-energiedatenanalyse/output/book/
+https://bausteine-der-datenanalyse.github.io/a-energiedatenanalyse-en/output/book/
