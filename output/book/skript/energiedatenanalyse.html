@@ -391,7 +391,7 @@ Note&nbsp;3.1: Download SMARD data
 <li><p>The columns with date and time information and the date format are defined.<br>
 <code>parse_dates = [0, 1], date_format = "%d.%m.%Y %H:%M"</code></p></li>
 </ul>
-<div id="2305384b" class="cell" data-results="hold" data-execution_count="1">
+<div id="aee865d3" class="cell" data-results="hold" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">"display.precision"</span>, <span class="dv">2</span>) <span class="co"># number of decimal places</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -465,12 +465,12 @@ Tip&nbsp;3.1: Date format solution
 <section id="organizing-data" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Organizing Data</h1>
 <p>Before data analysis, it should be checked whether the data has been correctly loaded. This means, on the one hand, verifying if the data type of all columns has been correctly recognized. You can check whether the column types of a file have been correctly loaded in Python with the command <code>df.dtypes</code>. Here is the output of this command for the DataFrame <code>generation_df</code>.</p>
-<div id="2567303b" class="cell" data-results="hold" data-execution_count="2">
+<div id="7b323462" class="cell" data-results="hold" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Columns:</span><span class="ch">\n</span><span class="sc">{</span>generation_df<span class="sc">.</span>dtypes<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Columns:
-Datum von                                            datetime64[ns]
-Datum bis                                            datetime64[ns]
+Datum von                                            datetime64[us]
+Datum bis                                            datetime64[us]
 Biomasse [MWh] Originalauflösungen                          float64
 Wasserkraft [MWh] Originalauflösungen                       float64
 Wind Offshore [MWh] Originalauflösungen                     float64
@@ -488,7 +488,7 @@ dtype: object</code></pre>
 </div>
 <p>&nbsp;</p>
 <p>Many of the column names contain the string ” Originalauflösungen” which can be removed for clarity (note the leading space). In this way, the unit indication [MWh] could also be removed if found distracting.</p>
-<div id="4354a875" class="cell" data-results="hold" data-execution_count="3">
+<div id="fbda2027" class="cell" data-results="hold" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove the string " Originalauflösungen"</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>installed_capacity_df.columns <span class="op">=</span> installed_capacity_df.columns.<span class="bu">str</span>.replace(pat <span class="op">=</span> <span class="st">" Originalauflösungen"</span>, repl <span class="op">=</span> <span class="st">""</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -498,8 +498,8 @@ dtype: object</code></pre>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>consumption_df.columns <span class="op">=</span> consumption_df.columns.<span class="bu">str</span>.replace(pat <span class="op">=</span> <span class="st">" Originalauflösungen"</span>, repl <span class="op">=</span> <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Columns:
-Datum von                        datetime64[ns]
-Datum bis                        datetime64[ns]
+Datum von                        datetime64[us]
+Datum bis                        datetime64[us]
 Biomasse [MWh]                          float64
 Wasserkraft [MWh]                       float64
 Wind Offshore [MWh]                     float64
@@ -521,7 +521,7 @@ dtype: object</code></pre>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">installed capacity</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">realized generation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">realized consumption</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div id="78cdf42d" class="cell" data-results="hold" data-execution_count="4">
+<div id="7d0b3d35" class="cell" data-results="hold" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The DataFrame installed_capacity_df has only 1 row</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>installed_capacity_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -574,7 +574,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div id="93174aa4" class="cell" data-results="hold" data-execution_count="5">
+<div id="cee42857" class="cell" data-results="hold" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pd.concat([generation_df.head(<span class="dv">2</span>), <span class="op">\</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>generation_df.iloc[<span class="bu">len</span>(generation_df)<span class="op">//</span><span class="dv">2</span>:(<span class="bu">len</span>(generation_df)<span class="op">//</span><span class="dv">2</span><span class="op">+</span><span class="dv">2</span>)], <span class="op">\</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>generation_df.tail(<span class="dv">2</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -713,7 +713,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div id="17c1563a" class="cell" data-results="hold" data-execution_count="6">
+<div id="c06f943f" class="cell" data-results="hold" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pd.concat([consumption_df.head(<span class="dv">2</span>), <span class="op">\</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>consumption_df.iloc[<span class="bu">len</span>(consumption_df)<span class="op">//</span><span class="dv">2</span>:(<span class="bu">len</span>(consumption_df)<span class="op">//</span><span class="dv">2</span><span class="op">+</span><span class="dv">2</span>)], <span class="op">\</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>consumption_df.tail(<span class="dv">2</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -792,7 +792,7 @@ dtype: object</code></pre>
 </div>
 <p>&nbsp;</p>
 <p>Finally, a plausibility check of the data is advisable. At the beginning, the total electricity consumption in Germany for 2023 was mentioned as 458.3 TWh. The electricity consumption and the sum of electricity generation should approximately correspond to this value.</p>
-<div id="a79e4b2c" class="cell" data-execution_count="7">
+<div id="e0cc1b34" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># exclude columns with datetime</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Electricity consumption in million MWh:</span><span class="ch">\n</span><span class="st">"</span>, <span class="op">\</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>consumption_df.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>) <span class="op">//</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>), sep <span class="op">=</span> <span class="st">""</span>)</span>
@@ -811,7 +811,7 @@ Electricity generation in million MWh 448.0</code></pre>
 </div>
 <p>&nbsp;</p>
 <p>If all files have been correctly loaded, working copies can be created with the command <code>df.copy()</code>. This way, the raw data remains always available and can be reloaded if necessary, for example, after accidentally overwriting the working copies.</p>
-<div id="df5651de" class="cell" data-results="hold" data-execution_count="8">
+<div id="4cd4f7c2" class="cell" data-results="hold" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>generation <span class="op">=</span> generation_df.copy()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>consumption <span class="op">=</span> consumption_df.copy()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>installed_capacity <span class="op">=</span> installed_capacity_df.copy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -821,7 +821,7 @@ Electricity generation in million MWh 448.0</code></pre>
 <h1 data-number="5"><span class="header-section-number">5</span> Descriptive Data Analysis</h1>
 <p>With methods of descriptive statistics, an overview of the datasets and the data can be obtained. This step is particularly useful for identifying possible errors and anomalies in the dataset. The findings obtained here can be explored in greater depth in the subsequent exploratory and inferential data analysis.</p>
 <p>An initial overview of the data is provided by the method <code>pd.DataFrame.describe()</code>, which describes the distribution of the data. By using the argument <code>include = [np.number]</code>, the output can be restricted to columns with numerical data, meaning that columns with date information are excluded.</p>
-<div id="edfbce95" class="cell" data-results="hold" data-execution_count="9">
+<div id="52a203b1" class="cell" data-results="hold" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The DataFrame 'generation' has </span><span class="sc">{</span>generation<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> rows and </span><span class="sc">{</span>generation<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> columns.</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>generation.describe(include <span class="op">=</span> [np.number])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1006,7 +1006,7 @@ Tip&nbsp;5.1: Pie Chart Solution
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Plotting with Pandas</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Code for Pandas</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div id="d702c5e9" class="cell" data-results="hold" data-execution_count="10">
+<div id="6b08d7e5" class="cell" data-results="hold" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1018,7 +1018,7 @@ Tip&nbsp;5.1: Pie Chart Solution
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div id="0a161e9e" class="cell" data-results="hold" data-execution_count="11">
+<div id="8710d416" class="cell" data-results="hold" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the pie first try - Other Erneuerbare [MWh] overlaps with Kernenergie [MWh] and Pumpspeicher [MWh]</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># generation.sum(numeric_only = True).plot.pie(colormap = "Blues", startangle = 90, rotatelabels = True, explode = explosion)</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1051,7 +1051,7 @@ Tip&nbsp;5.1: Pie Chart Solution
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Plotting with matplotlib</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Code for matplotlib</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<div id="e3c5db5f" class="cell" data-results="hold" data-execution_count="12">
+<div id="08581535" class="cell" data-results="hold" data-execution_count="12">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1063,7 +1063,7 @@ Tip&nbsp;5.1: Pie Chart Solution
 </div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<div id="ee08c491" class="cell" data-results="hold" data-execution_count="13">
+<div id="d95af16e" class="cell" data-results="hold" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define renewables and conventionals, sum each</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Renewables</span></span>
@@ -1159,7 +1159,7 @@ Tip&nbsp;5.2: Solution: Pumped Storage Efficiency
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="aac5c806" class="cell" data-results="hold" data-execution_count="14">
+<div id="d13da447" class="cell" data-results="hold" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total Generation Pumped Storage: </span><span class="sc">{</span>generation[<span class="st">'Pumpspeicher [MWh]'</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Total Consumption Pumped Storage: </span><span class="sc">{</span>consumption[<span class="st">'Pumpspeicher [MWh]'</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"</span><span class="sc">{</span><span class="dv">41</span> <span class="op">*</span> <span class="st">'='</span><span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
@@ -1175,7 +1175,7 @@ Efficiency in Percent:          79.10</code></pre>
 </div>
 </div>
 <p>The actually realized electricity generation is therefore the cumulative electricity generation of the pumped-storage power plants published by the Federal Network Agency, plus the storage losses. The Federal Network Agency includes this value in the electricity consumption dataset. The following code uses the “walrus” operator <code>:=</code>, which allows assignments within expressions (here within the print statement). This makes the code more concise (although readability decreases). Assignments made using the walrus operator must be enclosed in parentheses:</p>
-<div id="4fa717cb" class="cell" data-results="hold" data-execution_count="15">
+<div id="730d9017" class="cell" data-results="hold" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Storage losses:</span><span class="ch">\t\t\t</span><span class="sc">{</span>(storage_losses <span class="op">:=</span> (consumption[<span class="st">"Pumpspeicher [MWh]"</span>].<span class="bu">sum</span>() <span class="op">-</span> generation[<span class="st">"Pumpspeicher [MWh]"</span>].<span class="bu">sum</span>()) <span class="op">/</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>))<span class="sc">:&gt;6.2f}</span><span class="ss"> TWh</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Cumulative electricity generation:</span><span class="ch">\t</span><span class="sc">{</span>(cumulative_generation <span class="op">:=</span> generation.<span class="bu">sum</span>(numeric_only<span class="op">=</span><span class="va">True</span>).<span class="bu">sum</span>() <span class="op">//</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>))<span class="sc">:,.2f}</span><span class="ss"> TWh</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Total:</span><span class="ch">\t\t\t\t\t\t</span><span class="sc">{</span>storage_losses <span class="op">+</span> cumulative_generation<span class="sc">:,.2f}</span><span class="ss"> TWh</span><span class="ch">\n\n</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1270,25 +1270,25 @@ Tip&nbsp;5.3: Tip for Generation Data and Sample Solution
 <div class="callout-body-container callout-body">
 <p>The Austrian dataset differs in that it reports power (capacity) instead of generated energy. (This does not affect the visualization of generation shares.) The dataset also differs in another aspect.</p>
 <p>Tip: If not all columns appear in the output of the <code>.describe()</code> method, try printing the DataFrame in two or more parts. For example:</p>
-<div id="128cbb9a" class="cell" data-execution_count="16">
+<div id="b4ad555f" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[:, <span class="dv">0</span>:<span class="dv">5</span>].describe(include<span class="op">=</span>np.number))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[:, <span class="dv">5</span>:<span class="dv">10</span>].describe(include<span class="op">=</span>np.number))</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[:, <span class="dv">10</span>:<span class="dv">15</span>].describe(include<span class="op">=</span>np.number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Musterlösung Strommarktdaten Österreich">
+<div class="callout callout-style-default callout-tip callout-titled" title="Sample Solution: Electricity Market Data Austria">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Musterlösung Strommarktdaten Österreich
+<span class="screen-reader-only">Tip</span>Sample Solution: Electricity Market Data Austria
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="border">
-<div id="cbb69726" class="cell" data-execution_count="17">
+<div id="2b7c1888" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1636,7 +1636,7 @@ Act on the Priority of Renewable Energy Sources (Renewable Energy Sources Act �
 <section id="determine-residual-load-and-remaining-load" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="determine-residual-load-and-remaining-load"><span class="header-section-number">6.3</span> Determine residual load and remaining load</h2>
 <p>The Federal Network Agency publishes, in its dataset on realized electricity consumption, the grid load, residual load, and electricity consumption by pumped storage power plants.</p>
-<div id="be65eee0" class="cell" data-execution_count="18">
+<div id="763c97c0" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(consumption.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Gesamt (Netzlast) [MWh]    4.58e+08
@@ -1660,7 +1660,7 @@ Definition&nbsp;6.2: Residual Load
 </div>
 <p>&nbsp;</p>
 <p>The residual load not covered by renewable energies is the difference between electricity consumption and generation from renewable sources. Consequently, this residual load is smaller than the residual load published by the Federal Network Agency. Both residual load and this remaining load can be calculated from the difference between grid load and the corresponding renewable electricity generation.</p>
-<div id="6086964f" class="cell" data-execution_count="19">
+<div id="18e3e987" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>renewables <span class="op">=</span> [<span class="st">'Biomasse [MWh]'</span>, <span class="st">'Wasserkraft [MWh]'</span>, <span class="st">'Wind Offshore [MWh]'</span>, <span class="st">'Wind Onshore [MWh]'</span>, <span class="st">'Photovoltaik [MWh]'</span>, <span class="st">'Sonstige Erneuerbare [MWh]'</span>]</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>PV_WindOnshore_WindOffshore <span class="op">=</span> [<span class="st">'Wind Offshore [MWh]'</span>, <span class="st">'Wind Onshore [MWh]'</span>, <span class="st">'Photovoltaik [MWh]'</span>] </span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1744,14 +1744,14 @@ Definition&nbsp;6.2: Residual Load
 </div>
 <p>&nbsp;</p>
 <p>The residual load published by the Federal Network Agency <code>Residual Load BNetzA [MWh]</code> corresponds, based on the inspection of the first few rows, to the self-calculated residual load <code>Residual Load [MWh]</code>. Whether this holds true for the entire time series can be easily checked using the method <code>pd.Series.equals()</code>, which returns a boolean value, i.e., True or False.</p>
-<div id="bffe3c9c" class="cell" data-results="hold" data-execution_count="20">
+<div id="3ad57ef8" class="cell" data-results="hold" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plotting_data[<span class="st">'Residuallast BNetzA [MWh]'</span>].equals(plotting_data[<span class="st">'Residuallast [MWh]'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>This allows the redundant column to be removed.</p>
-<div id="ba6078d8" class="cell" data-results="hold" data-execution_count="21">
+<div id="6cecb570" class="cell" data-results="hold" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plotting_data.drop([<span class="st">'Residuallast BNetzA [MWh]'</span>], axis<span class="op">=</span><span class="st">'columns'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
@@ -1762,7 +1762,7 @@ Definition&nbsp;6.2: Residual Load
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Network Load Throughout the Year</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Code for the Plot</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
-<div id="c1c23367" class="cell" data-results="hold" data-execution_count="23">
+<div id="3f6f10d1" class="cell" data-results="hold" data-execution_count="23">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1774,7 +1774,7 @@ Definition&nbsp;6.2: Residual Load
 </div>
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
-<div id="1fd558e1" class="cell" data-results="hold" data-execution_count="24">
+<div id="4140f37d" class="cell" data-results="hold" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find position and content for x-axis labels</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>months <span class="op">=</span> generation[<span class="st">"Datum von"</span>].dt.month.unique().tolist() <span class="co"># gives numbers 1-12</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1790,7 +1790,7 @@ Definition&nbsp;6.2: Residual Load
 <span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="co">#   months_index.append(generation.index[generation["Datum von"].dt.month == i].min())</span></span>
 <span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   month_names.append(generation["Datum von"].iloc[months_index[i - 1]].strftime("%B"))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="588ae4f0" class="cell" data-results="hold" data-execution_count="25">
+<div id="e3077e13" class="cell" data-results="hold" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot every 100th value</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plotting_data[::<span class="dv">100</span>].plot(figsize <span class="op">=</span> (<span class="dv">9</span>, <span class="dv">8</span>), subplots <span class="op">=</span> <span class="va">True</span>, sharey <span class="op">=</span> <span class="va">True</span>, xlim <span class="op">=</span> (plotting_data.index.<span class="bu">min</span>() <span class="op">-</span> (<span class="bu">len</span>(plotting_data.index) <span class="op">/</span> <span class="dv">100</span>), plotting_data.index.<span class="bu">max</span>() <span class="op">*</span> <span class="fl">1.01</span>), rot <span class="op">=</span> <span class="dv">45</span>, grid <span class="op">=</span> <span class="va">True</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>plt.ylim(top <span class="op">=</span> <span class="dv">20000</span>)</span>
@@ -1824,7 +1824,7 @@ Tip&nbsp;6.1: Sample Solution Doubling RE
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false" href="">Possible Interpretation</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
-<div id="7552c5c9" class="cell" data-execution_count="26">
+<div id="0621dae7" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1836,7 +1836,7 @@ Tip&nbsp;6.1: Sample Solution Doubling RE
 </div>
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
-<div id="28aee340" class="cell" data-execution_count="27">
+<div id="84214de8" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plotting_data_2xRE <span class="op">=</span> plotting_data.copy()</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plotting_data_2xRE[<span class="st">"2x EE"</span>] <span class="op">=</span> plotting_data_2xRE[<span class="st">"Erneuerbare [MWh]"</span>] <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plotting_data_2xRE[<span class="st">"Netzlast - 2x EE"</span>] <span class="op">=</span> plotting_data_2xRE[<span class="st">"Netzlast [MWh]"</span>] <span class="op">-</span> plotting_data_2xRE[<span class="st">"2x EE"</span>]</span>
@@ -1909,7 +1909,7 @@ Annual~Full\text{-}Load~Hours~(h) = \frac{Total~electricity~generated~in~MWh}{In
 </div>
 </div>
 <p>The annual full-load hours can be calculated as follows. Applying the <code>.sum</code> method to the dataset <code>installed_capacity</code> is not necessary since it contains only one row. However, the <code>.sum</code> method allows you to exclude date columns using the parameter <code>numeric_only = True</code>.</p>
-<div id="37682761" class="cell" data-execution_count="28">
+<div id="20ce5f5b" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"{generation.sum(numeric_only=True)}\n")</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># print(installed_capacity.sum(numeric_only=True), "\n")</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1946,7 +1946,7 @@ dtype: float64</code></pre>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">Example Code: Nuclear Energy</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href="">Nuclear Energy</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false" href="">Lignite</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-4" role="tab" aria-controls="tabset-6-4" aria-selected="false" href="">Hard Coal</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-5" role="tab" aria-controls="tabset-6-5" aria-selected="false" href="">Natural Gas</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
-<div id="decb6348" class="cell" data-execution_count="29">
+<div id="2d971c11" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>plotting_data <span class="op">=</span> generation.copy()</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>producer <span class="op">=</span> <span class="st">"Kernenergie"</span></span>
@@ -1973,7 +1973,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
-<div id="a2a86829" class="cell" data-execution_count="30">
+<div id="db111fec" class="cell" data-execution_count="30">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1985,7 +1985,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
-<div id="bcd5b7ee" class="cell" data-execution_count="31">
+<div id="48ce1078" class="cell" data-execution_count="31">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1997,7 +1997,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <div id="tabset-6-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-4-tab">
-<div id="7aaf57e8" class="cell" data-execution_count="32">
+<div id="18a67908" class="cell" data-execution_count="32">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2009,7 +2009,7 @@ dtype: float64</code></pre>
 </div>
 </div>
 <div id="tabset-6-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-5-tab">
-<div id="f20bd2fb" class="cell" data-execution_count="33">
+<div id="bf973402" class="cell" data-execution_count="33">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2052,7 +2052,7 @@ Tip&nbsp;6.2: Sample Solution
 <div class="callout-body-container callout-body">
 <p>In the graphical representation of the annual profile, only every 100th value was plotted, so it is possible that electricity generation reached zero before the final shutdown. Therefore, it is more reliable to search the dataset backwards.</p>
 <p>In the forward search, the position of the first occurrence of the value 0 is determined with the <code>.eq()</code> method, and 1 is subtracted. In the backward search, the position of the first value greater than 0 is determined using the <code>.gt()</code> method.</p>
-<div id="2b93fbed" class="cell" data-execution_count="34">
+<div id="47eea0b1" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Forward search: generation['Kernenergie [MWh]'].eq(0).idxmax() - 1</span><span class="ch">\n</span><span class="sc">{</span>generation[<span class="st">'Kernenergie [MWh]'</span>]<span class="sc">.</span>eq(<span class="dv">0</span>)<span class="sc">.</span>idxmax() <span class="op">-</span> <span class="dv">1</span><span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># backward search</span></span>
@@ -2098,7 +2098,7 @@ Definition&nbsp;6.5: Sorted Annual Duration Curve
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href="">Code for the Plot</a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
-<div id="a86614d1" class="cell" data-execution_count="35">
+<div id="ee5b3841" class="cell" data-execution_count="35">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2110,7 +2110,7 @@ Definition&nbsp;6.5: Sorted Annual Duration Curve
 </div>
 </div>
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
-<div id="23d1bdde" class="cell" data-execution_count="36">
+<div id="e0e72bdf" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group data by day and aggregate by daily mean.</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>lignite_daily <span class="op">=</span> generation[<span class="st">'Braunkohle [MWh]'</span>].groupby(generation[<span class="st">"Datum von"</span>].dt.dayofyear).mean()</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>hardcoal_daily <span class="op">=</span> generation[<span class="st">'Steinkohle [MWh]'</span>].groupby(generation[<span class="st">"Datum von"</span>].dt.dayofyear).mean()</span>
@@ -2171,7 +2171,7 @@ Tip&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href="">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false" href="">Text-Output</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false" href="">Annual Biomass Profile</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-4" role="tab" aria-controls="tabset-8-4" aria-selected="false" href="">Annual Profile of Lignite</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-5" role="tab" aria-controls="tabset-8-5" aria-selected="false" href="">Sorted Annual Duration Curves</a></li></ul>
 <div class="tab-content">
 <div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
-<div id="e6ca15c3" class="cell" data-execution_count="37">
+<div id="92cb8276" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2244,7 +2244,7 @@ Tip&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 </div>
 </div>
 <div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
-<div id="ccb450b6" class="cell" data-execution_count="38">
+<div id="6d52f643" class="cell" data-execution_count="38">
 <div class="cell-output cell-output-stdout">
 <pre><code>            Datum von           Datum bis  Biomasse [MWh]  Wasserkraft [MWh]  \
 0 2023-01-01 00:00:00 2023-01-01 00:15:00         1094.25             320.00   
@@ -2309,7 +2309,7 @@ Tip&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 </div>
 </div>
 <div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
-<div id="b194ab5d" class="cell" data-execution_count="39">
+<div id="0179ab26" class="cell" data-execution_count="39">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2321,7 +2321,7 @@ Tip&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 </div>
 </div>
 <div id="tabset-8-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-4-tab">
-<div id="a0c696d2" class="cell" data-execution_count="40">
+<div id="0d43a5a9" class="cell" data-execution_count="40">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2333,7 +2333,7 @@ Tip&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 </div>
 </div>
 <div id="tabset-8-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-5-tab">
-<div id="8974f578" class="cell" data-execution_count="41">
+<div id="77743977" class="cell" data-execution_count="41">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2364,7 +2364,7 @@ Tip&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true" href="">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false" href="">Code for the Plot</a></li></ul>
 <div class="tab-content">
 <div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
-<div id="3b0b17ab" class="cell" data-execution_count="42">
+<div id="9e8b9ba0" class="cell" data-execution_count="42">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2376,7 +2376,7 @@ Tip&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 </div>
 </div>
 <div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
-<div id="0ebfc19c" class="cell" data-execution_count="43">
+<div id="ec3f5e8c" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate residual load</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>renewables <span class="op">=</span> [<span class="st">'Biomasse [MWh]'</span>, <span class="st">'Wasserkraft [MWh]'</span>, <span class="st">'Wind Offshore [MWh]'</span>, <span class="st">'Wind Onshore [MWh]'</span>, <span class="st">'Photovoltaik [MWh]'</span>, <span class="st">'Sonstige Erneuerbare [MWh]'</span>]</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2446,7 +2446,7 @@ residual_load["Netzlast [MWh]"] = consumption["Gesamt (Netzlast) [MWh]"].copy()
 residual_load["Erneuerbare [MWh]"] = generation[renewables].sum(axis="columns").copy()
 residual_load["Restlast [MWh]"] = residual_load["Netzlast [MWh]"] - 2 * residual_load["Erneuerbare [MWh]"]
 residual_load = residual_load["Restlast [MWh]"]</code></pre>
-<div id="f9c34855" class="cell" data-execution_count="44">
+<div id="b185f53b" class="cell" data-execution_count="44">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2505,7 +2505,7 @@ Note&nbsp;6.1: Time Change in the Austrian Dataset
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="d92dbad4" class="cell" data-execution_count="45">
+<div id="115daeb0" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>austria_generation <span class="op">=</span> pd.read_csv(</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    filepath_or_buffer<span class="op">=</span><span class="st">"01-daten/AGPT_2022-12-31T23_00_00Z_2023-12-31T23_00_00Z_15M_de_2024-06-10T09_32_38Z.csv"</span>,</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">";"</span>, </span>
@@ -2528,8 +2528,8 @@ Note&nbsp;6.1: Time Change in the Austrian Dataset
 <span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(austria_generation.dtypes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Zeit von [CET/CEST]             datetime64[ns]
-Zeit bis [CET/CEST]             datetime64[ns]
+<pre><code>Zeit von [CET/CEST]             datetime64[us]
+Zeit bis [CET/CEST]             datetime64[us]
 Wind [MW]                              float64
 Solar [MW]                             float64
 Biomasse [MW]                          float64
@@ -2552,13 +2552,13 @@ dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Musterlösung Aufgabe explorative Datenanalyse">
+<div class="callout callout-style-default callout-tip callout-titled" title="Sample Solution: Exploratory Data Analysis Exercise">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Musterlösung Aufgabe explorative Datenanalyse
+<span class="screen-reader-only">Tip</span>Sample Solution: Exploratory Data Analysis Exercise
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2569,7 +2569,7 @@ dtype: object</code></pre>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true" href="">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false" href="">Plot</a></li></ul>
 <div class="tab-content">
 <div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
-<div id="3530dd10" class="cell" data-execution_count="46">
+<div id="1d528a65" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2595,7 +2595,7 @@ dtype: object</code></pre>
 <span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a>    generation0_austria_ms[<span class="st">'Zeit von [CET/CEST]'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%d</span><span class="st">.%m.%Y %H:%M:%S"</span></span>
 <span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a><span class="co">## Column "Time to [CET/CEST]"</span></span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a><span class="co">## Column "Zeit bis [CET/CEST]"</span></span>
 <span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>generation0_austria_ms[<span class="st">'Zeit bis [CET/CEST]'</span>] <span class="op">=</span> generation0_austria_ms[<span class="st">'Zeit bis [CET/CEST]'</span>].<span class="bu">str</span>.replace(pat<span class="op">=</span><span class="st">'2A'</span>, repl<span class="op">=</span><span class="st">'02'</span>)</span>
 <span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a>generation0_austria_ms[<span class="st">'Zeit bis [CET/CEST]'</span>] <span class="op">=</span> generation0_austria_ms[<span class="st">'Zeit bis [CET/CEST]'</span>].<span class="bu">str</span>.replace(pat<span class="op">=</span><span class="st">'2B'</span>, repl<span class="op">=</span><span class="st">'02'</span>)</span>
 <span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a></span>
@@ -2639,10 +2639,10 @@ dtype: object</code></pre>
 </div>
 </div>
 <div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
-<div id="2e046d1d" class="cell" data-execution_count="47">
+<div id="db2a91cc" class="cell" data-execution_count="47">
 <div class="cell-output cell-output-stdout">
-<pre><code>Zeit von [CET/CEST]             datetime64[ns]
-Zeit bis [CET/CEST]             datetime64[ns]
+<pre><code>Zeit von [CET/CEST]             datetime64[us]
+Zeit bis [CET/CEST]             datetime64[us]
 Wind [MW]                              float64
 Solar [MW]                             float64
 Biomasse [MW]                          float64
@@ -2846,7 +2846,7 @@ f) 400 gigawatts by 2040<br>
 Code Block&nbsp;7.1
 </figcaption>
 <div aria-describedby="lst-zubaufaktoren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div id="50c5a2ac" class="cell" data-execution_count="48">
+<div id="7eb3d3e8" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate expansion factors for 2030 and 2035 based on installed capacity</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Onshore Wind 2030:</span><span class="ch">\t</span><span class="sc">{</span>( windonshore_growth_factor_2030 <span class="op">:=</span> <span class="dv">115</span> <span class="op">/</span> (installed_capacity[<span class="st">'Wind Onshore [MW]'</span>].<span class="bu">sum</span>() <span class="op">/</span> <span class="dv">1000</span>) )<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
@@ -2925,7 +2925,7 @@ Definition&nbsp;7.1: Selected Key Figures of Energy Storage Systems
 <section id="calculating-storage-size" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="calculating-storage-size"><span class="header-section-number">7.3</span> Calculating Storage Size</h2>
 <p>The following section develops the basic principles of storage design and the methods for calculating storage size. All considerations are based on the residual load curve. Values below zero correspond to a surplus of renewable generation, while values above zero correspond to a grid load that must be served by dispatchable power plants or storage. The residual load is determined as follows:</p>
-<div id="c147eab7" class="cell" data-execution_count="49">
+<div id="54e6e2fe" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>renewables <span class="op">=</span> [<span class="st">'Biomasse [MWh]'</span>, <span class="st">'Wasserkraft [MWh]'</span>, <span class="st">'Wind Offshore [MWh]'</span>, <span class="st">'Wind Onshore [MWh]'</span>, <span class="st">'Photovoltaik [MWh]'</span>, <span class="st">'Sonstige Erneuerbare [MWh]'</span>]</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>residual_load <span class="op">=</span> pd.DataFrame()</span>
@@ -2935,17 +2935,17 @@ Definition&nbsp;7.1: Selected Key Figures of Energy Storage Systems
 <span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>residual_load <span class="op">=</span> residual_load[<span class="st">"Restlast [MWh]"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To better understand the scale of the calculations, the storage size is put in relation to the existing pumped-storage capacity of 37.4 GWh.</p>
-<div id="21badbab" class="cell" data-execution_count="50">
+<div id="3e5ab04f" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>pumped_storage_capacity_MWh <span class="op">=</span> <span class="fl">37.4</span> <span class="op">*</span> <span class="dv">1000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>&nbsp;</p>
-<div id="tip-Testdaten" class="callout callout-style-default callout-tip callout-titled" title="Funktionsentwicklung mit Testdaten">
+<div id="tip-Testdaten" class="callout callout-style-default callout-tip callout-titled" title="Function Development with Test Data">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip&nbsp;7.1: Funktionsentwicklung mit Testdaten
+Tip&nbsp;7.1: Function Development with Test Data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2954,7 +2954,7 @@ Tip&nbsp;7.1: Funktionsentwicklung mit Testdaten
 <p>The functions developed below generally offer an option to output calculation results, but due to the length of the data series, displaying the residual load is not meaningful. As a result, the data series itself as well as intermediate and final results of the calculations, including any existing errors, cannot be easily reviewed. Therefore, for function development, it is recommended to work with test data. This allows calculations to be performed more quickly, and intermediate results and final outputs can be displayed for verification if needed. The following functions were developed using randomly generated test data.</p>
 <p>In the following code block, a residual load curve of ten random values is generated. By adjusting the values for <code>a</code> and <code>b</code>, the outcome can be controlled. The output records the sum of the data series. A negative value indicates that the simulated residual load curve shows a surplus production of renewable energy. A positive value indicates that the positive residual load along the simulated curve exceeds the renewable surplus production.</p>
 <p>The code block also creates a static data series. This serves to store test data that led to errors. The <code>random_data</code> series is output as a list so that it can be copied and pasted into the static data series for further testing.</p>
-<div id="4b0eb653" class="cell" data-execution_count="51">
+<div id="7bc3c66d" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rd</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2970,8 +2970,8 @@ Tip&nbsp;7.1: Funktionsentwicklung mit Testdaten
 <span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a static dataset as a pandas Series with float type</span></span>
 <span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>static_data <span class="op">=</span> pd.Series([<span class="dv">8</span>, <span class="op">-</span><span class="dv">14</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">20</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">12</span>], dtype<span class="op">=</span><span class="st">'float'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>random_data: [-3.0, -8.0, 7.0, -14.0, -6.0, -8.0, 9.0, -6.0, -9.0, -12.0]
-Sum of random_data: -50.0
+<pre><code>random_data: [-14.0, 1.0, 0.0, -5.0, 17.0, 15.0, 2.0, -19.0, -17.0, 20.0]
+Sum of random_data: 0.0
 </code></pre>
 </div>
 </div>
@@ -2983,7 +2983,7 @@ Sum of random_data: -50.0
 <p>The required size of the electricity storage depends, on one hand, on the ratio of the amount of renewable surplus production to the residual load that must be served from the storage. On the other hand, the efficiency η (Greek letter Eta) of the storage during charging and discharging plays a role.</p>
 <div class="quarto-layout-panel" data-layout="[50, 50]">
 <div class="quarto-layout-row">
-<div id="e78628d2" class="cell quarto-layout-cell" data-execution_count="52" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="1b1dcdf5" class="cell quarto-layout-cell" data-execution_count="52" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -3008,7 +3008,7 @@ Whether there is a surplus or a deficit of renewable electricity production can 
 </div>
 </div>
 <div class="quarto-layout-row">
-<div id="9dc91db7" class="cell quarto-layout-cell" data-execution_count="53" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="abacfb0a" class="cell quarto-layout-cell" data-execution_count="53" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -3037,7 +3037,7 @@ The discharging efficiency (including storage losses) increases the load to be m
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true" href="">without efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false" href="">with efficiency</a></li></ul>
 <div class="tab-content">
 <div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
-<div id="492c6084" class="cell" data-execution_count="54">
+<div id="6cbc9487" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detect excess renewable energy</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype='float')</span></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: sum is calculated over the pd.Series</span></span>
@@ -3054,7 +3054,7 @@ The discharging efficiency (including storage losses) increases the load to be m
 </div>
 </div>
 <div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
-<div id="81913181" class="cell" data-execution_count="55">
+<div id="5b39e198" class="cell" data-execution_count="55">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine renewable energy surplus, given a charge and discharge efficiency</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype='float'), charge_efficiency = 1, discharge_efficiency = 1</span></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: values less than 0 are multiplied by the charge efficiency</span></span>
@@ -3090,7 +3090,7 @@ The discharging efficiency (including storage losses) increases the load to be m
 <p>Over the course of a year, the sequence of periods with renewable surpluses and periods with positive residual load affects how large a storage system needs to be.</p>
 <div class="quarto-layout-panel" data-layout="[50, 50]">
 <div class="quarto-layout-row">
-<div id="fa02b1dd" class="cell quarto-layout-cell" data-execution_count="56" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="09a51c7c" class="cell quarto-layout-cell" data-execution_count="56" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -3112,7 +3112,7 @@ Order dependence can be resolved by considering two consecutive years. In the fi
 </div>
 </div>
 <div class="quarto-layout-row">
-<div id="d8754ab9" class="cell quarto-layout-cell" data-execution_count="57" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="9bc830ec" class="cell quarto-layout-cell" data-execution_count="57" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -3137,7 +3137,7 @@ The more frequently charging and discharging cycles alternate, the smaller the r
 </div>
 </div>
 <div class="quarto-layout-row">
-<div id="006c6b19" class="cell quarto-layout-cell" data-execution_count="58" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="c34beec5" class="cell quarto-layout-cell" data-execution_count="58" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -3171,7 +3171,7 @@ If the sum of renewable surplus production is greater than the residual load tha
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true" href="">without efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false" href="">with Efficiency</a></li></ul>
 <div class="tab-content">
 <div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
-<div id="88057665" class="cell" data-execution_count="59">
+<div id="f106852c" class="cell" data-execution_count="59">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate storage size</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype='float'), output = False</span></span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: call the function check_RE_surplus to distinguish between upper limit = 0 (storage empty) and lower limit = 0 (storage oversized)</span></span>
@@ -3234,7 +3234,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
-<div id="8daa840a" class="cell" data-execution_count="60">
+<div id="02fc380c" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate storage size</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype='float'), charge_efficiency = 1, discharge_efficiency = 1, output = False</span></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: call the function check_RE_surplus to distinguish between upper limit = 0 (storage empty) and lower limit = 0 (storage oversized)</span></span>
@@ -3317,10 +3317,10 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true" href="">without efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false" href="">Plot without Efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-3" role="tab" aria-controls="tabset-13-3" aria-selected="false" href="">Code for the plot without efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-4" role="tab" aria-controls="tabset-13-4" aria-selected="false" href="">With Efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-5" role="tab" aria-controls="tabset-13-5" aria-selected="false" href="">Plot with Efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-6" role="tab" aria-controls="tabset-13-6" aria-selected="false" href="">Code for the plot with efficiency</a></li></ul>
 <div class="tab-content">
 <div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
-<div id="0a0a4683" class="cell" data-execution_count="61">
+<div id="75f91ba8" class="cell" data-execution_count="61">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate annual storage profile</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype='float'), storage_capacity=-1, output=False</span></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: If storage_capacity=-1, the storage size is determined with the functicapacity(data)</span></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: If storage_capacity=-1, the storage size is determined with the function calculate_storage_capacity(data)</span></span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: data is concatenated twice to data_x2.</span></span>
 <span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: Based on the storage capacity, the storage level and free capacity are calculated for all data values for year 1 and all following years.</span></span>
 <span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Output: If output=False, returns a tuple with storage_capacity (float), storage_level_year1 (pd.Series), storage_level_year2 (pd.Series)</span></span>
@@ -3370,7 +3370,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
-<div id="a83b1e18" class="cell" data-execution_count="62">
+<div id="6b7aadb0" class="cell" data-execution_count="62">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -3382,7 +3382,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-13-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-3-tab">
-<div id="74c2ba10" class="cell" data-execution_count="63">
+<div id="4f086a7f" class="cell" data-execution_count="63">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>annual_storage_year1 <span class="op">=</span> storage_2023[<span class="dv">1</span>]</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>annual_storage_year2 <span class="op">=</span> storage_2023[<span class="dv">2</span>]</span>
@@ -3424,10 +3424,10 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-13-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-4-tab">
-<div id="64ceb617" class="cell" data-execution_count="64">
+<div id="dfdc6ed5" class="cell" data-execution_count="64">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate annual storage cycle</span></span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype = 'float'), storage_capacity = -1, charge_efficiency = 1, discharge_efficiency = 1, output = False</span></span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: If storage_capacity = -1, the storage size is calculated with the functicapacity(data).</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: If storage_capacity = -1, the storage size is calculated with the function calculate_storage_capacity(data).</span></span>
 <span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: data is concatenated twice to data_x2.</span></span>
 <span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: Based on the storage size, the state of charge and free capacity are calculated for all values of data for Year1 and all following years.</span></span>
 <span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Output: If output is False, a tuple of storage_capacity (float), state of charge Year1 (pd.Series), state of charge Year2 (pd.Series) is returned.</span></span>
@@ -3482,7 +3482,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-13-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-5-tab">
-<div id="0ddcd643" class="cell" data-execution_count="65">
+<div id="f243b4f0" class="cell" data-execution_count="65">
 <div class="cell-output cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -3494,7 +3494,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-13-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-6-tab">
-<div id="90c1131f" class="cell" data-execution_count="66">
+<div id="4f95beda" class="cell" data-execution_count="66">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>annual_storage_year1 <span class="op">=</span> storage_2023_eff_90_90[<span class="dv">1</span>]</span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>annual_storage_year2 <span class="op">=</span> storage_2023_eff_90_90[<span class="dv">2</span>]</span>
@@ -3551,7 +3551,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true" href="">without efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false" href="">with Efficiency</a></li></ul>
 <div class="tab-content">
 <div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
-<div id="6203430f" class="cell" data-execution_count="67">
+<div id="58aaed26" class="cell" data-execution_count="67">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate number of cycles</span></span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype='float'), output = False</span></span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: If the input is a tuple {'storage_capacity': float, 'storage_profile_year1': pd.Series, 'storage_profile_year2': pd.Series}, the number of cycles is calculated directly.</span></span>
@@ -3597,7 +3597,7 @@ Number of cycles year 2: 8.38</code></pre>
 </div>
 </div>
 <div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
-<div id="7c0cb319" class="cell" data-execution_count="68">
+<div id="0359f81c" class="cell" data-execution_count="68">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate number of cycles with efficiency</span></span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype = 'float'), charge_efficiency = 1, discharge_efficiency = 1, output = False</span></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: If the input is a tuple {'storage_capacity': float, 'storage_profile_year1': pd.Series, 'storage_profile_year2': pd.Series}, the number of cycles is calculated directly.</span></span>
@@ -3651,7 +3651,7 @@ Number of cycles year 2: 8.79</code></pre>
 <h3 class="anchored" data-anchor-id="capping">Capping</h3>
 <div class="quarto-layout-panel" data-layout="[50, 50]">
 <div class="quarto-layout-row">
-<div id="bc864474" class="cell quarto-layout-cell" data-execution_count="69" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="23267b41" class="cell quarto-layout-cell" data-execution_count="69" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -3691,7 +3691,7 @@ These steps are repeated for all elements in the variable <code>new_storage_capa
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true" href="">without efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false" href="">with Efficiency</a></li></ul>
 <div class="tab-content">
 <div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
-<div id="d4ca189d" class="cell" data-execution_count="70">
+<div id="1f35d4d5" class="cell" data-execution_count="70">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Curtailment calculation: How much renewable energy (RE) is discarded when storage size is limited?</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: Residual load curve data = pd.Series(data, dtype='float', new_storage_capacitys = [0.9, 0.8, 0.7, 0.6, 0.5], output = False)</span></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: For data, the function calculate_annual_storage() determines the storage size and the storage profiles for Year 1 and Year 2 without additional curtailment</span></span>
@@ -3801,7 +3801,7 @@ These steps are repeated for all elements in the variable <code>new_storage_capa
 </div>
 </div>
 <div id="tabset-15-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-2-tab">
-<div id="2a4ba431" class="cell" data-execution_count="71">
+<div id="72462562" class="cell" data-execution_count="71">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate curtailment: How much renewable energy is discarded when storage size is limited?</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: Residual load curve data = pd.Series(data, dtype = 'float', charge_efficiency = 1, discharge_efficiency = 1, new_storage_capacitys = [0.9, 0.8, 0.7, 0.6, 0.5], output = False)</span></span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: For data, the function calculate_annual_storage() determines the storage size and the annual profiles for Year 1 and Year 2 without additional curtailment</span></span>
@@ -3912,7 +3912,7 @@ These steps are repeated for all elements in the variable <code>new_storage_capa
 <p>By integrating an electricity storage system into the power grid, excess renewable generation can be shifted to periods with a positive residual load that would otherwise need to be met by conventional power plants. This reduces the share of conventional electricity generation and increases the share of renewable electricity generation.</p>
 <div class="quarto-layout-panel" data-layout="[50, 50]">
 <div class="quarto-layout-row">
-<div id="2c63093d" class="cell quarto-layout-cell" data-execution_count="72" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="4f292ff3" class="cell quarto-layout-cell" data-execution_count="72" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -3938,7 +3938,7 @@ The share of renewable electricity production is 1 minus the share of load that 
 </div>
 </div>
 <p>The share of renewable electricity production can therefore be calculated as follows:</p>
-<div id="82d51c40" class="cell" data-execution_count="73">
+<div id="bffaf29b" class="cell" data-execution_count="73">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>residual_load.clip(lower <span class="op">=</span> <span class="dv">0</span>).<span class="bu">sum</span>() <span class="op">/</span> consumption[<span class="st">'Gesamt (Netzlast) [MWh]'</span>].<span class="bu">sum</span>()</span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sum of positive residual load [MWh]: </span><span class="sc">{</span>residual_load<span class="sc">.</span>clip(lower <span class="op">=</span> <span class="dv">0</span>)<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
@@ -3974,7 +3974,7 @@ If a grid load data series is provided, the realized share of renewable generati
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-16-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-1" role="tab" aria-controls="tabset-16-1" aria-selected="true" href="">without efficiency</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-16-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-16-2" role="tab" aria-controls="tabset-16-2" aria-selected="false" href="">with Efficiency</a></li></ul>
 <div class="tab-content">
 <div id="tabset-16-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-16-1-tab">
-<div id="695a036c" class="cell" data-execution_count="74">
+<div id="78741bc3" class="cell" data-execution_count="74">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate share of renewable energy (RE)</span></span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype='float'), grid_load = -1, new_storage_capacitys = [0.9, 0.8, 0.7, 0.6, 0.5], output = False</span></span>
 <span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: Call function calculate_annual_storage(data) to determine storage size and annual storage profile for Year 1 and Year 2</span></span>
@@ -4081,7 +4081,7 @@ Storage size 1: 119,667.00  RE share without storage: 0.55
 </div>
 </div>
 <div id="tabset-16-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-16-2-tab">
-<div id="70fdc08d" class="cell" data-execution_count="75">
+<div id="cfdb757a" class="cell" data-execution_count="75">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate renewable energy share</span></span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Input: data = pd.Series(data, dtype='float'), grid_load = -1, charge_efficiency = 1, discharge_efficiency = 1, new_storage_capacitys = [0.9, 0.8, 0.7, 0.6, 0.5], output = False</span></span>
 <span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Processing: Call the function calculate_annual_storage(data) to determine storage size and annual profile of storage in year 1 and year 2</span></span>
@@ -4217,7 +4217,7 @@ Base storage size: 102,674.54   Renewable share without storage: 0.55
 </div>
 <div class="callout-body-container callout-body">
 <p>Future electricity consumption is unlikely to match that of 2023. Projections estimate electricity consumption of 658 TWh (Kemmler, Wünsch, and Burret 2021, p.&nbsp;4) for 2030 and 670.4 TWh in 2035 (Scenario B according to Nahmmacher et al.&nbsp;2021, p.&nbsp;54). The increase in electricity consumption compared to 2023 can be easily calculated:</p>
-<div id="6e38fb0e" class="cell" data-execution_count="76">
+<div id="01252d98" class="cell" data-execution_count="76">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>load_factor_2030_MWh <span class="op">=</span> (<span class="dv">658</span> <span class="op">*</span> <span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>) <span class="op">/</span> consumption[<span class="st">"Gesamt (Netzlast) [MWh]"</span>].<span class="bu">sum</span>()</span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>load_factor_2035_MWh <span class="op">=</span> (<span class="fl">670.4</span> <span class="op">*</span> <span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>) <span class="op">/</span> consumption[<span class="st">"Gesamt (Netzlast) [MWh]"</span>].<span class="bu">sum</span>()</span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -4250,7 +4250,7 @@ Tip&nbsp;7.2: Sample Solution: Closed Data Analysis Exercise
 <div class="tab-content">
 <div id="tabset-17-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-17-1-tab">
 <div class="boarder">
-<div id="7ba03284" class="cell" data-execution_count="77">
+<div id="ebd26b10" class="cell" data-execution_count="77">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set number of decimal places</span></span>
@@ -4393,7 +4393,7 @@ Base storage size: 23,829,823.85    Renewable share without storage: 0.81
 </div>
 </div>
 <div id="tabset-17-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-2-tab">
-<div id="57172730" class="cell" data-execution_count="78">
+<div id="66bc5f1d" class="cell" data-execution_count="78">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>my_storage_capacitys <span class="op">=</span> [<span class="fl">0.9</span>, <span class="fl">0.8</span>, <span class="fl">0.7</span>, <span class="fl">0.6</span>, <span class="fl">0.5</span>, <span class="fl">0.4</span>, <span class="fl">0.3</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.08</span>, <span class="fl">0.06</span>, <span class="fl">0.04</span>, <span class="fl">0.02</span>, <span class="fl">0.01</span>]</span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>my_charge_efficiency <span class="op">=</span> <span class="fl">0.9</span></span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>my_discharge_efficiency <span class="op">=</span> <span class="fl">0.88</span></span>
@@ -4493,7 +4493,7 @@ Base storage size: 6,170,038.04 Renewable share without storage: 0.73
 </div>
 </div>
 <div id="tabset-17-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-17-3-tab">
-<div id="3ee66219" class="cell" data-execution_count="79">
+<div id="ef869259" class="cell" data-execution_count="79">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate 2035 dataset</span></span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ## windonshore_growth_factor_2035</span></span>
 <span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ## windoffshore_growth_factor_2035</span></span>
@@ -4596,7 +4596,7 @@ Base storage size: 23,829,823.85    Renewable share without storage: 0.81
 <section id="graphical-representation-of-selected-storage-configurations" class="level3">
 <h3 class="anchored" data-anchor-id="graphical-representation-of-selected-storage-configurations">Graphical Representation of Selected Storage Configurations</h3>
 <p>A graphical representation of the annual storage profile can be generated for different configurations relative to the maximum required storage capacity (C<span class="math inline">\(_{max}\)</span>) using the function <code>calculate_annual_storage(output = False)</code>. First, a residual load curve for the years 2030 and 2035 is calculated from the projected grid load and the planned renewable expansion.</p>
-<div id="029f2c8a" class="cell" data-execution_count="80">
+<div id="5a44c385" class="cell" data-execution_count="80">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate residual load 2030</span></span>
 <span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="co">## windonshore_growth_factor_2030</span></span>
 <span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="co">## windoffshore_growth_factor_2030</span></span>
@@ -4645,7 +4645,7 @@ Base storage size: 23,829,823.85    Renewable share without storage: 0.81
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-18-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-1" role="tab" aria-controls="tabset-18-1" aria-selected="true" href="">80% 2030</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-2" role="tab" aria-controls="tabset-18-2" aria-selected="false" href="">80% 2035</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-3" role="tab" aria-controls="tabset-18-3" aria-selected="false" href="">20% 2030</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-4" role="tab" aria-controls="tabset-18-4" aria-selected="false" href="">20% 2035</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-5" role="tab" aria-controls="tabset-18-5" aria-selected="false" href="">4% 2030</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-6" role="tab" aria-controls="tabset-18-6" aria-selected="false" href="">4% 2035</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-18-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-18-7" role="tab" aria-controls="tabset-18-7" aria-selected="false" href="">Code Example</a></li></ul>
 <div class="tab-content">
 <div id="tabset-18-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-18-1-tab">
-<div id="084940d4" class="cell" data-execution_count="81">
+<div id="7317bac4" class="cell" data-execution_count="81">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -4670,7 +4670,7 @@ This corresponds to 132.0 pumped storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-18-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-2-tab">
-<div id="f9aca20c" class="cell" data-execution_count="82">
+<div id="6fd2f1e0" class="cell" data-execution_count="82">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -4695,7 +4695,7 @@ This corresponds to 509.7 pumped storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-18-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-3-tab">
-<div id="10c57d63" class="cell" data-execution_count="83">
+<div id="6ce0ea02" class="cell" data-execution_count="83">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -4720,7 +4720,7 @@ This corresponds to 33.0 pumped storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-18-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-4-tab">
-<div id="af543c7e" class="cell" data-execution_count="84">
+<div id="c5b3af35" class="cell" data-execution_count="84">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -4745,7 +4745,7 @@ This corresponds to 127.4 pumped storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-18-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-5-tab">
-<div id="2fc412ed" class="cell" data-execution_count="85">
+<div id="954701c9" class="cell" data-execution_count="85">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -4770,7 +4770,7 @@ This corresponds to 6.6 pumped storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-18-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-6-tab">
-<div id="228f6f3d" class="cell" data-execution_count="86">
+<div id="565e0383" class="cell" data-execution_count="86">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -4795,7 +4795,7 @@ This corresponds to 25.5 pumped storage equivalents.</code></pre>
 </div>
 </div>
 <div id="tabset-18-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-18-7-tab">
-<div id="6e8af740" class="cell" data-execution_count="87">
+<div id="a3610881" class="cell" data-execution_count="87">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data</span></span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Determine storage size and calculate 80 percent</span></span>
 <span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>storage_capacity_2030_80 <span class="op">=</span> calculate_storage_capacity(residual_load_2030, charge_efficiency<span class="op">=</span><span class="fl">0.9</span>, discharge_efficiency<span class="op">=</span><span class="fl">0.88</span>, output<span class="op">=</span><span class="va">False</span>) <span class="op">*</span> <span class="fl">0.8</span></span>
@@ -4864,7 +4864,7 @@ This corresponds to 25.5 pumped storage equivalents.</code></pre>
 <section id="bonus-estimating-the-required-peak-power-of-backup-power-plants" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="bonus-estimating-the-required-peak-power-of-backup-power-plants"><span class="header-section-number">7.6</span> Bonus: Estimating the Required Peak Power of Backup Power Plants</h2>
 <p>From the calculation of different storage sizes, it became clear that even relatively small storage systems can lead to a high share of renewable energy in the electricity mix. Nevertheless, smaller storage capacities mean that at certain times, the grid load must be met by backup load-following power plants. In this section, the required generation capacity of these backup plants is estimated. The maximum positive residual load after discharging is multiplied by four, since the dataset is based on 15-minute intervals.</p>
-<div id="b5678daa" class="cell" data-execution_count="88">
+<div id="34c23dc0" class="cell" data-execution_count="88">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>peak_power_2030 <span class="op">=</span> calculate_renewable_share(residual_load_2030, grid_load <span class="op">=</span> grid_load_2030, charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.88</span>, new_storage_capacitys <span class="op">=</span> [<span class="fl">0.2</span>, <span class="fl">0.04</span>], output <span class="op">=</span> <span class="va">False</span>)</span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>peak_power_2035 <span class="op">=</span> calculate_renewable_share(residual_load_2035, grid_load <span class="op">=</span> grid_load_2035, charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.88</span>, new_storage_capacitys <span class="op">=</span> [<span class="fl">0.2</span>, <span class="fl">0.04</span>], output <span class="op">=</span> <span class="va">False</span>)</span>
 <span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a></span>
