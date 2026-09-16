@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Energy Data Analysis – Anwendungsbaustein Energiedatenanalyse</title>
+<title>1&nbsp; Energy Data Analysis – Energy Data Analysis Application Module</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -116,17 +116,17 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Keine Treffer",
-    "search-matching-documents-text": "Treffer",
-    "search-copy-link-title": "Link in die Suche kopieren",
-    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
-    "search-more-match-text": "weitere Treffer in diesem Dokument",
-    "search-more-matches-text": "weitere Treffer in diesem Dokument",
-    "search-clear-button-title": "Zurücksetzen",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Abbrechen",
-    "search-submit-button-title": "Abschicken",
-    "search-label": "Suchen"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
@@ -171,13 +171,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/energiedatenanalyse.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Energy Data Analysis</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -193,16 +193,16 @@ window.Quarto = {
       <img src="../skript/00-bilder/logo_with_text_new.svg" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Anwendungsbaustein Energiedatenanalyse</a> 
+      <a href="../">Energy Data Analysis Application Module</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="../Anwendungsbaustein-Energiedatenanalyse.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse-en" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="../Energy-Data-Analysis-Application-Module.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Suchen"></div>
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -226,7 +226,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title"><p>Anwendungsbaustein Energiedatenanalyse</p>
+    <h2 id="toc-title"><p>Energy Data Analysis Application Module</p>
 <p><img src="skript/00-bilder/logo_with_text_new.svg" class="img-fluid"></p></h2>
    
   <ul>
@@ -276,7 +276,7 @@ window.Quarto = {
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">9.2</span> Exercises</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse/blob/main/skript/energiedatenanalyse.qmd" class="toc-action"><i class="bi bi-github"></i>Quellcode anzeigen</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse-en/blob/main/skript/energiedatenanalyse.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -302,7 +302,7 @@ window.Quarto = {
 
 <section id="background" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Background</h1>
-<p>Electric power is generated in power plants and transported via the power grid to electricity consumers. Power generation and consumption must always be balanced. The share of weather-dependent renewable generation is increasing, but electricity cannot yet be stored economically on a large scale. In 2023, pumped-storage power plants in Germany, with a capacity of 37.4 GWh <span class="citation" data-cites="Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland">(<a href="#ref-Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland" role="doc-biblioref">Heimerl und Kohler 2017</a>, p.&nbsp;77)</span>, fed in 11.1 TWh of electricity, which corresponded to 2.4 percent of Germany’s total electricity consumption of 458.3 TWh <span class="citation" data-cites="energy-charts-strom">(<a href="#ref-energy-charts-strom" role="doc-biblioref">Fraunhofer Institut für Solare Energiesysteme ISE, o.&nbsp;J.</a>)</span>. Power plant scheduling and storage sizing based on generation and consumption data is therefore a relevant application area for data analysis.<br>
+<p>Electric power is generated in power plants and transported via the power grid to electricity consumers. Power generation and consumption must always be balanced. The share of weather-dependent renewable generation is increasing, but electricity cannot yet be stored economically on a large scale. In 2023, pumped-storage power plants in Germany, with a capacity of 37.4 GWh <span class="citation" data-cites="Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland">(<a href="#ref-Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland" role="doc-biblioref">Heimerl and Kohler 2017, 77</a>)</span>, fed in 11.1 TWh of electricity, which corresponded to 2.4 percent of Germany’s total electricity consumption of 458.3 TWh <span class="citation" data-cites="energy-charts-strom">(<a href="#ref-energy-charts-strom" role="doc-biblioref">Fraunhofer Institut für Solare Energiesysteme ISE, n.d.</a>)</span>. Power plant scheduling and storage sizing based on generation and consumption data is therefore a relevant application area for data analysis.<br>
 The Federal Network Agency publishes, among other things, data on electricity generation, consumption, and wholesale prices on <a href="https://www.smard.de/home/downloadcenter/download-marktdaten/">https://www.smard.de/</a>. (Note: Power plant data is available for generation units with an installed generation capacity of at least 100 MW.)</p>
 </section>
 <section id="reading-the-data" class="level1" data-number="3">
@@ -342,7 +342,7 @@ The Federal Network Agency publishes, among other things, data on electricity ge
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hinweis&nbsp;3.1: Download SMARD data
+Note&nbsp;3.1: Download SMARD data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -410,7 +410,7 @@ Hinweis&nbsp;3.1: Download SMARD data
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>consumption_df <span class="op">=</span> pd.read_csv(filepath_or_buffer <span class="op">=</span> <span class="op">\</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st">"01-daten/Realisierter_Stromverbrauch_202301010000_202401010000_Viertelstunde.csv"</span>, <span class="op">\</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>sep <span class="op">=</span> <span class="st">";"</span>, thousands <span class="op">=</span> <span class="st">"."</span>, decimal <span class="op">=</span> <span class="st">","</span>, <span class="op">\</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>parse_dates <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>], date_format <span class="op">=</span> <span class="st">"</span><span class="sc">%d</span><span class="st">.%m.%Y %H:%M"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>parse_dates <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>], date_format <span class="op">=</span> <span class="st">"</span><span class="sc">%d</span><span class="st">.%m.%Y %H:%M"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Take a look at the string used to specify the date format: <code>"%d.%m.%Y %H:%M"</code>. Using the <a href="https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior">documentation</a>, can you determine what format the dates in the file use? What would be the format for April 14, 2023, at a quarter past two in the afternoon?</p>
 <textarea id="date-format" name="date-format" rows="4" cols="80">You can enter your answer here. The solution is shown in the dropdown.</textarea>
@@ -420,7 +420,7 @@ Hinweis&nbsp;3.1: Download SMARD data
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;3.1: Date format solution
+Tip&nbsp;3.1: Date format solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -466,7 +466,7 @@ Tipp&nbsp;3.1: Date format solution
 <h1 data-number="4"><span class="header-section-number">4</span> Organizing Data</h1>
 <p>Before data analysis, it should be checked whether the data has been correctly loaded. This means, on the one hand, verifying if the data type of all columns has been correctly recognized. You can check whether the column types of a file have been correctly loaded in Python with the command <code>df.dtypes</code>. Here is the output of this command for the DataFrame <code>generation_df</code>.</p>
 <div id="2567303b" class="cell" data-results="hold" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Columns:</span><span class="ch">\n</span><span class="sc">{</span>generation_df<span class="sc">.</span>dtypes<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Columns:</span><span class="ch">\n</span><span class="sc">{</span>generation_df<span class="sc">.</span>dtypes<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Columns:
 Datum von                                            datetime64[ns]
@@ -495,7 +495,7 @@ dtype: object</code></pre>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>generation_df.columns <span class="op">=</span> generation_df.columns.<span class="bu">str</span>.replace(pat <span class="op">=</span> <span class="st">" Originalauflösungen"</span>, repl <span class="op">=</span> <span class="st">""</span>)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Columns:</span><span class="ch">\n</span><span class="sc">{</span>generation_df<span class="sc">.</span>dtypes<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>consumption_df.columns <span class="op">=</span> consumption_df.columns.<span class="bu">str</span>.replace(pat <span class="op">=</span> <span class="st">" Originalauflösungen"</span>, repl <span class="op">=</span> <span class="st">""</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>consumption_df.columns <span class="op">=</span> consumption_df.columns.<span class="bu">str</span>.replace(pat <span class="op">=</span> <span class="st">" Originalauflösungen"</span>, repl <span class="op">=</span> <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Columns:
 Datum von                        datetime64[ns]
@@ -523,7 +523,7 @@ dtype: object</code></pre>
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="78cdf42d" class="cell" data-results="hold" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The DataFrame installed_capacity_df has only 1 row</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>installed_capacity_df</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>installed_capacity_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
@@ -577,7 +577,7 @@ dtype: object</code></pre>
 <div id="93174aa4" class="cell" data-results="hold" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pd.concat([generation_df.head(<span class="dv">2</span>), <span class="op">\</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>generation_df.iloc[<span class="bu">len</span>(generation_df)<span class="op">//</span><span class="dv">2</span>:(<span class="bu">len</span>(generation_df)<span class="op">//</span><span class="dv">2</span><span class="op">+</span><span class="dv">2</span>)], <span class="op">\</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>generation_df.tail(<span class="dv">2</span>)])</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>generation_df.tail(<span class="dv">2</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
@@ -716,7 +716,7 @@ dtype: object</code></pre>
 <div id="17c1563a" class="cell" data-results="hold" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pd.concat([consumption_df.head(<span class="dv">2</span>), <span class="op">\</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>consumption_df.iloc[<span class="bu">len</span>(consumption_df)<span class="op">//</span><span class="dv">2</span>:(<span class="bu">len</span>(consumption_df)<span class="op">//</span><span class="dv">2</span><span class="op">+</span><span class="dv">2</span>)], <span class="op">\</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>consumption_df.tail(<span class="dv">2</span>)])</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>consumption_df.tail(<span class="dv">2</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -798,7 +798,7 @@ dtype: object</code></pre>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>consumption_df.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>) <span class="op">//</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>), sep <span class="op">=</span> <span class="st">""</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Electricity generation in million MWh"</span>, <span class="op">\</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>generation_df.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>).<span class="bu">sum</span>() <span class="op">//</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>generation_df.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>).<span class="bu">sum</span>() <span class="op">//</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Electricity consumption in million MWh:
 Gesamt (Netzlast) [MWh]    458.0
@@ -814,7 +814,7 @@ Electricity generation in million MWh 448.0</code></pre>
 <div id="df5651de" class="cell" data-results="hold" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>generation <span class="op">=</span> generation_df.copy()</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>consumption <span class="op">=</span> consumption_df.copy()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>installed_capacity <span class="op">=</span> installed_capacity_df.copy()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>installed_capacity <span class="op">=</span> installed_capacity_df.copy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="descriptive-data-analysis" class="level1" data-number="5">
@@ -823,7 +823,7 @@ Electricity generation in million MWh 448.0</code></pre>
 <p>An initial overview of the data is provided by the method <code>pd.DataFrame.describe()</code>, which describes the distribution of the data. By using the argument <code>include = [np.number]</code>, the output can be restricted to columns with numerical data, meaning that columns with date information are excluded.</p>
 <div id="edfbce95" class="cell" data-results="hold" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"The DataFrame 'generation' has </span><span class="sc">{</span>generation<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> rows and </span><span class="sc">{</span>generation<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> columns.</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>generation.describe(include <span class="op">=</span> [np.number])</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>generation.describe(include <span class="op">=</span> [np.number])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The DataFrame 'generation' has 35040 rows and 14 columns.
 </code></pre>
@@ -991,7 +991,7 @@ Electricity generation in million MWh 448.0</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;5.1: Pie Chart Solution
+Tip&nbsp;5.1: Pie Chart Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1039,7 +1039,7 @@ Tipp&nbsp;5.1: Pie Chart Solution
 <span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>circle <span class="op">=</span> plt.Circle((<span class="dv">0</span>, <span class="dv">0</span>), radius <span class="op">=</span> <span class="fl">0.7</span>, color <span class="op">=</span> <span class="st">"white"</span>)</span>
 <span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>ax.add_patch(circle)</span>
 <span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1122,7 +1122,7 @@ Tipp&nbsp;5.1: Pie Chart Solution
 <span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Conventionals"</span>, fontsize <span class="op">=</span> font_size <span class="op">+</span> <span class="dv">2</span>)</span>
 <span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1134,7 +1134,7 @@ Tipp&nbsp;5.1: Pie Chart Solution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hinweis&nbsp;5.1: Note
+Note&nbsp;5.1: Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1145,7 +1145,7 @@ Hinweis&nbsp;5.1: Note
 </section>
 <section id="generation-storage-injection" class="level3">
 <h3 class="anchored" data-anchor-id="generation-storage-injection">Generation, Storage, Injection</h3>
-<p>Pumped-storage power plants are energy storage systems that do not produce primary energy but store electricity generated by other producers and feed it back into the grid when needed. Which producers supplied electricity to fill the pumped storage is analyzed in <a href="#sec-exploratory-data-analysis" class="quarto-xref"><span>Kapitel 6</span></a>. The realized grid feed-in of pumped-storage plants corresponds to the energy production of other power plants reduced by the losses incurred during charging and discharging (as well as any storage losses such as evaporation or seepage). The efficiency of pumped-storage power plants can be calculated using the available data for the year 2023.<br>
+<p>Pumped-storage power plants are energy storage systems that do not produce primary energy but store electricity generated by other producers and feed it back into the grid when needed. Which producers supplied electricity to fill the pumped storage is analyzed in <a href="#sec-exploratory-data-analysis" class="quarto-xref"><span>Chapter 6</span></a>. The realized grid feed-in of pumped-storage plants corresponds to the energy production of other power plants reduced by the losses incurred during charging and discharging (as well as any storage losses such as evaporation or seepage). The efficiency of pumped-storage power plants can be calculated using the available data for the year 2023.<br>
 <strong>What was the efficiency of the pumped-storage power plants in 2023?</strong></p>
 <div id="tip-pumped-storage-efficiency" class="callout callout-style-default callout-tip callout-titled" title="Solution: Pumped Storage Efficiency">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -1153,7 +1153,7 @@ Hinweis&nbsp;5.1: Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;5.2: Solution: Pumped Storage Efficiency
+Tip&nbsp;5.2: Solution: Pumped Storage Efficiency
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1163,7 +1163,7 @@ Tipp&nbsp;5.2: Solution: Pumped Storage Efficiency
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total Generation Pumped Storage: </span><span class="sc">{</span>generation[<span class="st">'Pumpspeicher [MWh]'</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Total Consumption Pumped Storage: </span><span class="sc">{</span>consumption[<span class="st">'Pumpspeicher [MWh]'</span>]<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"</span><span class="sc">{</span><span class="dv">41</span> <span class="op">*</span> <span class="st">'='</span><span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Efficiency in Percent: </span><span class="ch">\t\t\t</span><span class="sc">{</span>(generation[<span class="st">'Pumpspeicher [MWh]'</span>].<span class="bu">sum</span>() <span class="op">/</span> consumption[<span class="st">'Pumpspeicher [MWh]'</span>].<span class="bu">sum</span>()) <span class="op">*</span> <span class="dv">100</span><span class="sc">:,.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Efficiency in Percent: </span><span class="ch">\t\t\t</span><span class="sc">{</span>(generation[<span class="st">'Pumpspeicher [MWh]'</span>].<span class="bu">sum</span>() <span class="op">/</span> consumption[<span class="st">'Pumpspeicher [MWh]'</span>].<span class="bu">sum</span>()) <span class="op">*</span> <span class="dv">100</span><span class="sc">:,.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Total Generation Pumped Storage: 11,149,398.50
 Total Consumption Pumped Storage: 14,095,632.75
@@ -1178,7 +1178,7 @@ Efficiency in Percent:          79.10</code></pre>
 <div id="4fa717cb" class="cell" data-results="hold" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Storage losses:</span><span class="ch">\t\t\t</span><span class="sc">{</span>(storage_losses <span class="op">:=</span> (consumption[<span class="st">"Pumpspeicher [MWh]"</span>].<span class="bu">sum</span>() <span class="op">-</span> generation[<span class="st">"Pumpspeicher [MWh]"</span>].<span class="bu">sum</span>()) <span class="op">/</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>))<span class="sc">:&gt;6.2f}</span><span class="ss"> TWh</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Cumulative electricity generation:</span><span class="ch">\t</span><span class="sc">{</span>(cumulative_generation <span class="op">:=</span> generation.<span class="bu">sum</span>(numeric_only<span class="op">=</span><span class="va">True</span>).<span class="bu">sum</span>() <span class="op">//</span> (<span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>))<span class="sc">:,.2f}</span><span class="ss"> TWh</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Total:</span><span class="ch">\t\t\t\t\t\t</span><span class="sc">{</span>storage_losses <span class="op">+</span> cumulative_generation<span class="sc">:,.2f}</span><span class="ss"> TWh</span><span class="ch">\n\n</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Total:</span><span class="ch">\t\t\t\t\t\t</span><span class="sc">{</span>storage_losses <span class="op">+</span> cumulative_generation<span class="sc">:,.2f}</span><span class="ss"> TWh</span><span class="ch">\n\n</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Storage losses:           2.95 TWh
 Cumulative electricity generation:  448.00 TWh
@@ -1232,7 +1232,7 @@ Total:                      450.95 TWh
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hinweis&nbsp;5.2: Download Austria Market Transparency Data
+Note&nbsp;5.2: Download Austria Market Transparency Data
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1262,7 +1262,7 @@ Hinweis&nbsp;5.2: Download Austria Market Transparency Data
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;5.3: Tip for Generation Data and Sample Solution
+Tip&nbsp;5.3: Tip for Generation Data and Sample Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1273,7 +1273,7 @@ Tipp&nbsp;5.3: Tip for Generation Data and Sample Solution
 <div id="128cbb9a" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[:, <span class="dv">0</span>:<span class="dv">5</span>].describe(include<span class="op">=</span>np.number))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[:, <span class="dv">5</span>:<span class="dv">10</span>].describe(include<span class="op">=</span>np.number))</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[:, <span class="dv">10</span>:<span class="dv">15</span>].describe(include<span class="op">=</span>np.number))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.iloc[:, <span class="dv">10</span>:<span class="dv">15</span>].describe(include<span class="op">=</span>np.number))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Musterlösung Strommarktdaten Österreich">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
@@ -1281,7 +1281,7 @@ Tipp&nbsp;5.3: Tip for Generation Data and Sample Solution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Musterlösung Strommarktdaten Österreich
+<span class="screen-reader-only">Tip</span>Musterlösung Strommarktdaten Österreich
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1375,7 +1375,7 @@ Tipp&nbsp;5.3: Tip for Generation Data and Sample Solution
 <span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a>circle <span class="op">=</span> plt.Circle((<span class="dv">0</span>, <span class="dv">0</span>), radius<span class="op">=</span><span class="fl">0.7</span>, color<span class="op">=</span><span class="st">"white"</span>)</span>
 <span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a>pie_plot.add_patch(circle)</span>
 <span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Zeit von [CET/CEST]  Zeit bis [CET/CEST]  Wind [MW]  Solar [MW]  \
 0  01.01.2023 00:00:00  01.01.2023 00:15:00     1000.0         0.0   
@@ -1570,7 +1570,7 @@ ERROR: Negative values detected in generation data.
 </section>
 <section id="sec-exploratory-data-analysis" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Exploratory Data Analysis</h1>
-<p>Exploratory data analysis means asking questions about the available data and answering them using data analysis methods. The insights gained in this way can help refine the questions or generate new ones. It is therefore an iterative process, aimed primarily at gaining a deeper understanding of the data. <span class="citation" data-cites="R-for-Data-Science">(<a href="#ref-R-for-Data-Science" role="doc-biblioref">Wickham u.&nbsp;a. 2023, Kap. 10</a> Exploratory data analysis)</span></p>
+<p>Exploratory data analysis means asking questions about the available data and answering them using data analysis methods. The insights gained in this way can help refine the questions or generate new ones. It is therefore an iterative process, aimed primarily at gaining a deeper understanding of the data. <span class="citation" data-cites="R-for-Data-Science">(<a href="#ref-R-for-Data-Science" role="doc-biblioref">Wickham et al. 2023</a>, Kapitel 10 Exploratory data analysis)</span></p>
 <section id="background-marginal-electricity-analysis" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="background-marginal-electricity-analysis"><span class="header-section-number">6.1</span> Background: Marginal Electricity Analysis</h2>
 <p>In the present case, the exploratory examination of the dataset is guided by the question of which producers supplied electricity to <em>additionally</em> fill the pumped storage facilities beyond meeting the grid demand. The aim is to determine which electricity producers, at the times when the pumped storage plants were being filled, were capable of providing additional output. This additional electricity can be referred to briefly as marginal electricity.</p>
@@ -1637,7 +1637,7 @@ Act on the Priority of Renewable Energy Sources (Renewable Energy Sources Act �
 <h2 data-number="6.3" class="anchored" data-anchor-id="determine-residual-load-and-remaining-load"><span class="header-section-number">6.3</span> Determine residual load and remaining load</h2>
 <p>The Federal Network Agency publishes, in its dataset on realized electricity consumption, the grid load, residual load, and electricity consumption by pumped storage power plants.</p>
 <div id="be65eee0" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(consumption.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>))</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(consumption.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Gesamt (Netzlast) [MWh]    4.58e+08
 Residuallast [MWh]         2.60e+08
@@ -1673,7 +1673,7 @@ Definition&nbsp;6.2: Residual Load
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>plotting_data[<span class="st">"Residuallast [MWh]"</span>] <span class="op">=</span> plotting_data[<span class="st">"Netzlast [MWh]"</span>] <span class="op">-</span> plotting_data[<span class="st">"volatile EE [MWh]"</span>]</span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>plotting_data[<span class="st">"Restlast [MWh]"</span>] <span class="op">=</span> plotting_data[<span class="st">"Netzlast [MWh]"</span>] <span class="op">-</span> plotting_data[<span class="st">"Erneuerbare [MWh]"</span>]</span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>plotting_data.head()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>plotting_data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
@@ -1745,14 +1745,14 @@ Definition&nbsp;6.2: Residual Load
 <p>&nbsp;</p>
 <p>The residual load published by the Federal Network Agency <code>Residual Load BNetzA [MWh]</code> corresponds, based on the inspection of the first few rows, to the self-calculated residual load <code>Residual Load [MWh]</code>. Whether this holds true for the entire time series can be easily checked using the method <code>pd.Series.equals()</code>, which returns a boolean value, i.e., True or False.</p>
 <div id="bffe3c9c" class="cell" data-results="hold" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plotting_data[<span class="st">'Residuallast BNetzA [MWh]'</span>].equals(plotting_data[<span class="st">'Residuallast [MWh]'</span>])</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>plotting_data[<span class="st">'Residuallast BNetzA [MWh]'</span>].equals(plotting_data[<span class="st">'Residuallast [MWh]'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>This allows the redundant column to be removed.</p>
 <div id="ba6078d8" class="cell" data-results="hold" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plotting_data.drop([<span class="st">'Residuallast BNetzA [MWh]'</span>], axis<span class="op">=</span><span class="st">'columns'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>plotting_data.drop([<span class="st">'Residuallast BNetzA [MWh]'</span>], axis<span class="op">=</span><span class="st">'columns'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="visualizing-the-annual-cycle" class="level2" data-number="6.4">
@@ -1788,7 +1788,7 @@ Definition&nbsp;6.2: Residual Load
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># for i in months:</span></span>
 <span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="co">#   months_index.append(generation.index[generation["Datum von"].dt.month == i].min())</span></span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   month_names.append(generation["Datum von"].iloc[months_index[i - 1]].strftime("%B"))</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   month_names.append(generation["Datum von"].iloc[months_index[i - 1]].strftime("%B"))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="588ae4f0" class="cell" data-results="hold" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot every 100th value</span></span>
@@ -1797,7 +1797,7 @@ Definition&nbsp;6.2: Residual Load
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>plt.minorticks_off()</span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>plt.xticks(months_index, month_names)<span class="op">;</span></span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -1814,7 +1814,7 @@ Definition&nbsp;6.2: Residual Load
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;6.1: Sample Solution Doubling RE
+Tip&nbsp;6.1: Sample Solution Doubling RE
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1850,7 +1850,7 @@ Tipp&nbsp;6.1: Sample Solution Doubling RE
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>plt.minorticks_off()</span>
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>plt.xticks(months_index, month_names)</span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
@@ -1919,7 +1919,7 @@ Annual~Full\text{-}Load~Hours~(h) = \frac{Total~electricity~generated~in~MWh}{In
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Reset index</span></span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>full_load_hours_per_year.index <span class="op">=</span> generation.<span class="bu">sum</span>(numeric_only<span class="op">=</span><span class="va">True</span>).index.<span class="bu">str</span>.replace(pat<span class="op">=</span><span class="st">" [MWh]"</span>, repl<span class="op">=</span><span class="st">" [h]"</span>)</span>
 <span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n\n</span><span class="ss">Full load hours per year</span><span class="ch">\n\n</span><span class="sc">{</span>full_load_hours_per_year<span class="sc">.</span>sort_values(ascending<span class="op">=</span><span class="va">False</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n\n</span><span class="ss">Full load hours per year</span><span class="ch">\n\n</span><span class="sc">{</span>full_load_hours_per_year<span class="sc">.</span>sort_values(ascending<span class="op">=</span><span class="va">False</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 
@@ -1969,7 +1969,7 @@ dtype: float64</code></pre>
 <span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>    plt.xticks(day_index, day_names, fontsize <span class="op">=</span> <span class="dv">8</span>)</span>
 <span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
@@ -2030,7 +2030,7 @@ dtype: float64</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;6.3: Hint and Sample Solution
+Tip&nbsp;6.3: Hint and Sample Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2044,7 +2044,7 @@ Tipp&nbsp;6.3: Hint and Sample Solution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;6.2: Sample Solution
+Tip&nbsp;6.2: Sample Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2058,7 +2058,7 @@ Tipp&nbsp;6.2: Sample Solution
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># backward search</span></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Backward search: position := generation['Kernenergie [MWh]'].iloc[::-1].gt(0).idxmax()</span><span class="ch">\n</span><span class="sc">{</span> ( position <span class="op">:=</span> generation[<span class="st">'Kernenergie [MWh]'</span>].iloc[::<span class="op">-</span><span class="dv">1</span>].gt(<span class="dv">0</span>).idxmax() ) <span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"generation['Datum bis'].iloc[position].strftime('%d. %B %Y um %H:%M Uhr')</span><span class="ch">\n</span><span class="sc">{</span>generation[<span class="st">'Datum bis'</span>]<span class="sc">.</span>iloc[position]<span class="sc">.</span>strftime(<span class="st">'</span><span class="sc">%d</span><span class="st">. %B %Y um %H:%M Uhr'</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"generation['Datum bis'].iloc[position].strftime('%d. %B %Y um %H:%M Uhr')</span><span class="ch">\n</span><span class="sc">{</span>generation[<span class="st">'Datum bis'</span>]<span class="sc">.</span>iloc[position]<span class="sc">.</span>strftime(<span class="st">'</span><span class="sc">%d</span><span class="st">. %B %Y um %H:%M Uhr'</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Forward search: generation['Kernenergie [MWh]'].eq(0).idxmax() - 1
 10075
@@ -2146,7 +2146,7 @@ Definition&nbsp;6.5: Sorted Annual Duration Curve
 <span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'number of days per year'</span>)</span>
 <span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-35"><a href="#cb37-35" aria-hidden="true" tabindex="-1"></a>plt.margins(x <span class="op">=</span> <span class="fl">0.02</span>)</span>
-<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2160,7 +2160,7 @@ Definition&nbsp;6.5: Sorted Annual Duration Curve
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
+Tip&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2240,7 +2240,7 @@ Tipp&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 <span id="cb38-66"><a href="#cb38-66" aria-hidden="true" tabindex="-1"></a>    plt.xticks(day_index, day_numbers, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
 <span id="cb38-67"><a href="#cb38-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-68"><a href="#cb38-68" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb38-69"><a href="#cb38-69" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb38-69"><a href="#cb38-69" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
@@ -2421,7 +2421,7 @@ Tipp&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 <span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2434,7 +2434,7 @@ Tipp&nbsp;6.4: Sample Solution: Generation Profiles of Biomass and Lignite
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;6.5: Sample solution: Storage with double renewable generation
+Tip&nbsp;6.5: Sample solution: Storage with double renewable generation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2472,14 +2472,14 @@ residual_load = residual_load["Restlast [MWh]"]</code></pre>
 <p>Upper and main stages of the power plant group: Mooser- and Wasserfallboden with Karlingerkees at the top left, in the background on the right the Großvenediger. Image by Tigerente is licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/de/deed.de">CC BY-SA 3.0</a> and available on <a href="https://commons.wikimedia.org/w/index.php?curid=4595972">wikimedia.org</a>. 2008</p>
 </div>
 <p>&nbsp;</p>
-<p><strong>Visualize the annual pattern of pumped storage in Austria for 2023.</strong> Notes on downloading the data can be found in section <a href="#sec-task-descriptive-data-analysis" class="quarto-xref"><span>Kapitel 5.2</span></a>.</p>
+<p><strong>Visualize the annual pattern of pumped storage in Austria for 2023.</strong> Notes on downloading the data can be found in section <a href="#sec-task-descriptive-data-analysis" class="quarto-xref"><span>Section 5.2</span></a>.</p>
 <div id="wrn-DateColumn-Austria" class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hinweis&nbsp;6.1: Time Change in the Austrian Dataset
+Note&nbsp;6.1: Time Change in the Austrian Dataset
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2499,7 +2499,7 @@ Hinweis&nbsp;6.1: Time Change in the Austrian Dataset
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Example Solution: Correct Reading Using str.replace()
+<span class="screen-reader-only">Tip</span>Example Solution: Correct Reading Using str.replace()
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2526,7 +2526,7 @@ Hinweis&nbsp;6.1: Time Change in the Austrian Dataset
 <span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>austria_generation[<span class="st">'Zeit bis [CET/CEST]'</span>] <span class="op">=</span> pd.to_datetime(austria_generation[<span class="st">'Zeit bis [CET/CEST]'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%d</span><span class="st">.%m.%Y %H:%M:%S"</span>)</span>
 <span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(austria_generation.dtypes)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(austria_generation.dtypes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Zeit von [CET/CEST]             datetime64[ns]
 Zeit bis [CET/CEST]             datetime64[ns]
@@ -2558,7 +2558,7 @@ dtype: object</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tipp</span>Musterlösung Aufgabe explorative Datenanalyse
+<span class="screen-reader-only">Tip</span>Musterlösung Aufgabe explorative Datenanalyse
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2635,7 +2635,7 @@ dtype: object</code></pre>
 <span id="cb44-63"><a href="#cb44-63" aria-hidden="true" tabindex="-1"></a>    plt.xticks(day_index, day_labels, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
 <span id="cb44-64"><a href="#cb44-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-65"><a href="#cb44-65" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb44-66"><a href="#cb44-66" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb44-66"><a href="#cb44-66" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
@@ -2727,7 +2727,7 @@ dtype: object
 <section id="inferential-data-analysis" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Inferential Data Analysis</h1>
 <p>Inferential data analysis means drawing conclusions based on data. It differs from descriptive and exploratory data analysis in that data are not only observed and compared, but also used to generate new insights.</p>
-<p>In the exploratory analysis of the generation data, it was observed that in 2023, full supply from renewable energies is already reached at certain points. From considering the doubled renewable electricity generation in 2023 (see <a href="#tip-doubling-RE" class="quarto-xref">Tipp&nbsp;<span>6.1</span></a>), it can be inferred that with the increasing expansion of renewable electricity production, periods of renewable overproduction will occur more frequently. The prospect of regular renewable production surpluses creates a need for electricity storage to make electricity from periods of overproduction usable during periods with positive residual load.</p>
+<p>In the exploratory analysis of the generation data, it was observed that in 2023, full supply from renewable energies is already reached at certain points. From considering the doubled renewable electricity generation in 2023 (see <a href="#tip-doubling-RE" class="quarto-xref">Tip&nbsp;<span>6.1</span></a>), it can be inferred that with the increasing expansion of renewable electricity production, periods of renewable overproduction will occur more frequently. The prospect of regular renewable production surpluses creates a need for electricity storage to make electricity from periods of overproduction usable during periods with positive residual load.</p>
 <p>This section examines the resulting storage requirements.</p>
 <div class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -2735,7 +2735,7 @@ dtype: object
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warnung</span>Note
+<span class="screen-reader-only">Warning</span>Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2763,7 +2763,7 @@ dtype: object
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warnung</span>Legal Basis for the Renewable Expansion Path
+<span class="screen-reader-only">Warning</span>Legal Basis for the Renewable Expansion Path
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2843,7 +2843,7 @@ f) 400 gigawatts by 2040<br>
 <div id="lst-zubaufaktoren" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst quarto-uncaptioned" id="lst-zubaufaktoren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Code-Block&nbsp;7.1
+Code Block&nbsp;7.1
 </figcaption>
 <div aria-describedby="lst-zubaufaktoren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="50c5a2ac" class="cell" data-execution_count="48">
@@ -2857,7 +2857,7 @@ Code-Block&nbsp;7.1
 <span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n\n</span><span class="ss">Onshore Wind 2035:</span><span class="ch">\t</span><span class="sc">{</span>( windonshore_growth_factor_2035 <span class="op">:=</span> <span class="dv">157</span> <span class="op">/</span> (installed_capacity[<span class="st">'Wind Onshore [MW]'</span>].<span class="bu">sum</span>() <span class="op">/</span> <span class="dv">1000</span>) )<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Offshore Wind 2035:</span><span class="ch">\t</span><span class="sc">{</span>( windoffshore_growth_factor_2035 <span class="op">:=</span> <span class="dv">40</span> <span class="op">/</span> (installed_capacity[<span class="st">'Wind Offshore [MW]'</span>].<span class="bu">sum</span>() <span class="op">/</span> <span class="dv">1000</span>) )<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Solar 2035:</span><span class="ch">\t\t\t</span><span class="sc">{</span>( solar_growth_factor_2035 <span class="op">:=</span> <span class="dv">309</span> <span class="op">/</span> (installed_capacity[<span class="st">'Photovoltaik [MW]'</span>].<span class="bu">sum</span>() <span class="op">/</span> <span class="dv">1000</span>) )<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Biomass 2035:</span><span class="ch">\t\t</span><span class="sc">{</span><span class="fl">8.4</span> <span class="op">/</span> (installed_capacity[<span class="st">'Biomasse [MW]'</span>].<span class="bu">sum</span>() <span class="op">/</span> <span class="dv">1000</span>)<span class="sc">:,.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Biomass 2035:</span><span class="ch">\t\t</span><span class="sc">{</span><span class="fl">8.4</span> <span class="op">/</span> (installed_capacity[<span class="st">'Biomasse [MW]'</span>].<span class="bu">sum</span>() <span class="op">/</span> <span class="dv">1000</span>)<span class="sc">:,.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Onshore Wind 2030:  2.00
 Offshore Wind 2030: 3.69
@@ -2881,7 +2881,7 @@ Biomass 2035:       0.99</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warnung</span>Power Grid Development Plan
+<span class="screen-reader-only">Warning</span>Power Grid Development Plan
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2932,11 +2932,11 @@ Definition&nbsp;7.1: Selected Key Figures of Energy Storage Systems
 <span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>residual_load[<span class="st">"Netzlast [MWh]"</span>] <span class="op">=</span> consumption[<span class="st">"Gesamt (Netzlast) [MWh]"</span>].copy()</span>
 <span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>residual_load[<span class="st">"Erneuerbare [MWh]"</span>] <span class="op">=</span> generation[renewables].<span class="bu">sum</span>(axis<span class="op">=</span><span class="st">"columns"</span>).copy()</span>
 <span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>residual_load[<span class="st">"Restlast [MWh]"</span>] <span class="op">=</span> residual_load[<span class="st">"Netzlast [MWh]"</span>] <span class="op">-</span> residual_load[<span class="st">"Erneuerbare [MWh]"</span>]</span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>residual_load <span class="op">=</span> residual_load[<span class="st">"Restlast [MWh]"</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>residual_load <span class="op">=</span> residual_load[<span class="st">"Restlast [MWh]"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To better understand the scale of the calculations, the storage size is put in relation to the existing pumped-storage capacity of 37.4 GWh.</p>
 <div id="21badbab" class="cell" data-execution_count="50">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>pumped_storage_capacity_MWh <span class="op">=</span> <span class="fl">37.4</span> <span class="op">*</span> <span class="dv">1000</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>pumped_storage_capacity_MWh <span class="op">=</span> <span class="fl">37.4</span> <span class="op">*</span> <span class="dv">1000</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>&nbsp;</p>
 <div id="tip-Testdaten" class="callout callout-style-default callout-tip callout-titled" title="Funktionsentwicklung mit Testdaten">
@@ -2945,7 +2945,7 @@ Definition&nbsp;7.1: Selected Key Figures of Energy Storage Systems
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;7.1: Funktionsentwicklung mit Testdaten
+Tip&nbsp;7.1: Funktionsentwicklung mit Testdaten
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2968,7 +2968,7 @@ Tipp&nbsp;7.1: Funktionsentwicklung mit Testdaten
 <span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"random_data: </span><span class="sc">{</span><span class="bu">list</span>(random_data)<span class="sc">}</span><span class="ch">\n</span><span class="ss">Sum of random_data: </span><span class="sc">{</span>random_data<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
 <span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a static dataset as a pandas Series with float type</span></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>static_data <span class="op">=</span> pd.Series([<span class="dv">8</span>, <span class="op">-</span><span class="dv">14</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">20</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">12</span>], dtype<span class="op">=</span><span class="st">'float'</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>static_data <span class="op">=</span> pd.Series([<span class="dv">8</span>, <span class="op">-</span><span class="dv">14</span>, <span class="op">-</span><span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="op">-</span><span class="dv">6</span>, <span class="dv">5</span>, <span class="op">-</span><span class="dv">20</span>, <span class="op">-</span><span class="dv">2</span>, <span class="dv">12</span>], dtype<span class="op">=</span><span class="st">'float'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>random_data: [-3.0, -8.0, 7.0, -14.0, -6.0, -8.0, 9.0, -6.0, -9.0, -12.0]
 Sum of random_data: -50.0
@@ -3047,7 +3047,7 @@ The discharging efficiency (including storage losses) increases the load to be m
 <span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data.<span class="bu">sum</span>() <span class="op">&lt;</span> <span class="dv">0</span></span>
 <span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>check_renewable_excess(residual_load)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>check_renewable_excess(residual_load)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="53">
 <pre><code>np.False_</code></pre>
 </div>
@@ -3074,7 +3074,7 @@ The discharging efficiency (including storage losses) increases the load to be m
 <span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data_efficiency_adjusted.<span class="bu">sum</span>() <span class="op">&lt;</span> <span class="dv">0</span></span>
 <span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>check_RE_surplus(residual_load, charge_efficiency<span class="op">=</span><span class="fl">0.9</span>, discharge_efficiency<span class="op">=</span><span class="fl">0.9</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>check_RE_surplus(residual_load, charge_efficiency<span class="op">=</span><span class="fl">0.9</span>, discharge_efficiency<span class="op">=</span><span class="fl">0.9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="54">
 <pre><code>np.False_</code></pre>
 </div>
@@ -3082,7 +3082,7 @@ The discharging efficiency (including storage losses) increases the load to be m
 </div>
 </div>
 </div>
-<p>As known from the marginal electricity analysis in section <a href="#sec-PumpedStorageContent" class="quarto-xref"><span>Kapitel 6.6</span></a>, there was no surplus of renewable electricity production in 2023.</p>
+<p>As known from the marginal electricity analysis in section <a href="#sec-PumpedStorageContent" class="quarto-xref"><span>Section 6.6</span></a>, there was no surplus of renewable electricity production in 2023.</p>
 </section>
 </section>
 <section id="cyclicality" class="level3">
@@ -3226,7 +3226,7 @@ If the sum of renewable surplus production is greater than the residual load tha
 <span id="cb56-52"><a href="#cb56-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb56-53"><a href="#cb56-53" aria-hidden="true" tabindex="-1"></a>storage_2023 <span class="op">=</span> calculate_storage_capacity(residual_load, output<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb56-54"><a href="#cb56-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-55"><a href="#cb56-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Required storage size 2023: </span><span class="sc">{</span>storage_2023<span class="sc">:,.1f}</span><span class="ss"> MWh</span><span class="ch">\n</span><span class="ss">This corresponds to </span><span class="sc">{</span>storage_2023 <span class="op">/</span> pumped_storage_capacity_MWh<span class="sc">:,.1f}</span><span class="ss"> pumped-storage equivalents."</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb56-55"><a href="#cb56-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Required storage size 2023: </span><span class="sc">{</span>storage_2023<span class="sc">:,.1f}</span><span class="ss"> MWh</span><span class="ch">\n</span><span class="ss">This corresponds to </span><span class="sc">{</span>storage_2023 <span class="op">/</span> pumped_storage_capacity_MWh<span class="sc">:,.1f}</span><span class="ss"> pumped-storage equivalents."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Required storage size 2023: 119,667.0 MWh
 This corresponds to 3.2 pumped-storage equivalents.</code></pre>
@@ -3295,7 +3295,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 <span id="cb58-58"><a href="#cb58-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb58-59"><a href="#cb58-59" aria-hidden="true" tabindex="-1"></a>storage_2023capacity <span class="op">=</span> calculate_storage_capacity(residual_load, charge_efficiency<span class="op">=</span><span class="fl">0.9</span>, discharge_efficiency<span class="op">=</span><span class="fl">0.9</span>, output<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb58-60"><a href="#cb58-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-61"><a href="#cb58-61" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Required storage size 2023: </span><span class="sc">{</span>storage_2023<span class="sc">:,.1f}</span><span class="ss"> MWh</span><span class="ch">\n</span><span class="ss">This corresponds to </span><span class="sc">{</span>storage_2023 <span class="op">/</span> pumped_storage_capacity_MWh<span class="sc">:,.1f}</span><span class="ss"> pumped-storage equivalents."</span>)   </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb58-61"><a href="#cb58-61" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Required storage size 2023: </span><span class="sc">{</span>storage_2023<span class="sc">:,.1f}</span><span class="ss"> MWh</span><span class="ch">\n</span><span class="ss">This corresponds to </span><span class="sc">{</span>storage_2023 <span class="op">/</span> pumped_storage_capacity_MWh<span class="sc">:,.1f}</span><span class="ss"> pumped-storage equivalents."</span>)   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Required storage size 2023: 119,667.0 MWh
 This corresponds to 3.2 pumped-storage equivalents.</code></pre>
@@ -3366,7 +3366,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 <span id="cb60-46"><a href="#cb60-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:  <span class="co"># output=False</span></span>
 <span id="cb60-47"><a href="#cb60-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> storage_capacity, pd.Series(storage_level[:<span class="bu">len</span>(annual_storage)<span class="op">//</span><span class="dv">2</span>]), pd.Series(storage_level[<span class="bu">len</span>(annual_storage)<span class="op">//</span><span class="dv">2</span>:])</span>
 <span id="cb60-48"><a href="#cb60-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-49"><a href="#cb60-49" aria-hidden="true" tabindex="-1"></a>storage_2023 <span class="op">=</span> calculate_annual_storage(residual_load, output<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb60-49"><a href="#cb60-49" aria-hidden="true" tabindex="-1"></a>storage_2023 <span class="op">=</span> calculate_annual_storage(residual_load, output<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
@@ -3420,7 +3420,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 <span id="cb61-35"><a href="#cb61-35" aria-hidden="true" tabindex="-1"></a>ax3.grid()</span>
 <span id="cb61-36"><a href="#cb61-36" aria-hidden="true" tabindex="-1"></a>ax3.legend()</span>
 <span id="cb61-37"><a href="#cb61-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-38"><a href="#cb61-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb61-38"><a href="#cb61-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-13-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-4-tab">
@@ -3478,7 +3478,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 <span id="cb62-51"><a href="#cb62-51" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>: <span class="co"># output = False</span></span>
 <span id="cb62-52"><a href="#cb62-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> storage_capacity, pd.Series(storage_state[ : <span class="bu">len</span>(annual_storage) <span class="op">//</span> <span class="dv">2</span> ]), pd.Series(storage_state[ <span class="bu">len</span>(annual_storage) <span class="op">//</span> <span class="dv">2</span> : ])</span>
 <span id="cb62-53"><a href="#cb62-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-54"><a href="#cb62-54" aria-hidden="true" tabindex="-1"></a>storage_2023_eff_90_90 <span class="op">=</span> calculate_annual_storage(residual_load, charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, output <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb62-54"><a href="#cb62-54" aria-hidden="true" tabindex="-1"></a>storage_2023_eff_90_90 <span class="op">=</span> calculate_annual_storage(residual_load, charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, output <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div id="tabset-13-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-5-tab">
@@ -3532,7 +3532,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 <span id="cb63-35"><a href="#cb63-35" aria-hidden="true" tabindex="-1"></a>ax3.grid()</span>
 <span id="cb63-36"><a href="#cb63-36" aria-hidden="true" tabindex="-1"></a>ax3.legend()</span>
 <span id="cb63-37"><a href="#cb63-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-38"><a href="#cb63-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb63-38"><a href="#cb63-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -3589,7 +3589,7 @@ This corresponds to 3.2 pumped-storage equivalents.</code></pre>
 <span id="cb64-35"><a href="#cb64-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
 <span id="cb64-36"><a href="#cb64-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cycles_year1, cycles_year2</span>
 <span id="cb64-37"><a href="#cb64-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb64-38"><a href="#cb64-38" aria-hidden="true" tabindex="-1"></a>calculate_cycles(storage_2023, output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb64-38"><a href="#cb64-38" aria-hidden="true" tabindex="-1"></a>calculate_cycles(storage_2023, output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of cycles year 1: 8.38
 Number of cycles year 2: 8.38</code></pre>
@@ -3635,7 +3635,7 @@ Number of cycles year 2: 8.38</code></pre>
 <span id="cb66-35"><a href="#cb66-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
 <span id="cb66-36"><a href="#cb66-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cycles_year1, cycles_year2</span>
 <span id="cb66-37"><a href="#cb66-37" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb66-38"><a href="#cb66-38" aria-hidden="true" tabindex="-1"></a>calculate_cycles(residual_load, charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb66-38"><a href="#cb66-38" aria-hidden="true" tabindex="-1"></a>calculate_cycles(residual_load, charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of cycles year 1: 8.79
 Number of cycles year 2: 8.79</code></pre>
@@ -3772,7 +3772,7 @@ These steps are repeated for all elements in the variable <code>new_storage_capa
 <span id="cb68-78"><a href="#cb68-78" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
 <span id="cb68-79"><a href="#cb68-79" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dataset</span>
 <span id="cb68-80"><a href="#cb68-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb68-81"><a href="#cb68-81" aria-hidden="true" tabindex="-1"></a>calculate_curtailment_effect(residual_load, output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb68-81"><a href="#cb68-81" aria-hidden="true" tabindex="-1"></a>calculate_curtailment_effect(residual_load, output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Storage size  Storage amount Year1  Cycles Year1  Storage amount Year2  \
 0      119667.0              1.00e+06          8.38              1.00e+06   
@@ -3882,7 +3882,7 @@ These steps are repeated for all elements in the variable <code>new_storage_capa
 <span id="cb70-78"><a href="#cb70-78" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
 <span id="cb70-79"><a href="#cb70-79" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dataset</span>
 <span id="cb70-80"><a href="#cb70-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb70-81"><a href="#cb70-81" aria-hidden="true" tabindex="-1"></a>calculate_curtailment_effect(residual_load, charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb70-81"><a href="#cb70-81" aria-hidden="true" tabindex="-1"></a>calculate_curtailment_effect(residual_load, charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Storage size  Storage Year1  Cycles Year1  Storage Year2  Cycles Year2
 0     102674.54      902678.40          8.79      902678.40          8.79
@@ -3948,7 +3948,7 @@ The share of renewable electricity production is 1 minus the share of load that 
 <span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Sum of generation: </span><span class="sc">{</span>generation<span class="sc">.</span><span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>)<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Quotient positive residual load / generation: </span><span class="sc">{</span>residual_load<span class="sc">.</span>clip(lower <span class="op">=</span> <span class="dv">0</span>)<span class="sc">.</span><span class="bu">sum</span>() <span class="op">/</span> generation<span class="sc">.</span><span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>)<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Share of renewable generation: </span><span class="sc">{</span><span class="dv">1</span> <span class="op">-</span> (residual_load.clip(lower <span class="op">=</span> <span class="dv">0</span>).<span class="bu">sum</span>() <span class="op">/</span> generation.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>).<span class="bu">sum</span>())<span class="sc">:,.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Share of renewable generation: </span><span class="sc">{</span><span class="dv">1</span> <span class="op">-</span> (residual_load.clip(lower <span class="op">=</span> <span class="dv">0</span>).<span class="bu">sum</span>() <span class="op">/</span> generation.<span class="bu">sum</span>(numeric_only <span class="op">=</span> <span class="va">True</span>).<span class="bu">sum</span>())<span class="sc">:,.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Sum of positive residual load [MWh]: 207842228.25
 Sum of grid load: 458271100.75
@@ -4064,7 +4064,7 @@ If a grid load data series is provided, the realized share of renewable generati
 <span id="cb74-87"><a href="#cb74-87" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:  <span class="co"># Return residual load curves</span></span>
 <span id="cb74-88"><a href="#cb74-88" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> residual_after_discharge</span>
 <span id="cb74-89"><a href="#cb74-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-90"><a href="#cb74-90" aria-hidden="true" tabindex="-1"></a>calculate_re_share(residual_load, grid_load<span class="op">=</span>consumption[<span class="st">'Gesamt (Netzlast) [MWh]'</span>], new_storage_capacitys<span class="op">=</span>[<span class="fl">0.9</span>, <span class="fl">0.8</span>, <span class="fl">0.7</span>, <span class="fl">0.6</span>, <span class="fl">0.5</span>], output<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb74-90"><a href="#cb74-90" aria-hidden="true" tabindex="-1"></a>calculate_re_share(residual_load, grid_load<span class="op">=</span>consumption[<span class="st">'Gesamt (Netzlast) [MWh]'</span>], new_storage_capacitys<span class="op">=</span>[<span class="fl">0.9</span>, <span class="fl">0.8</span>, <span class="fl">0.7</span>, <span class="fl">0.6</span>, <span class="fl">0.5</span>], output<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Total grid load: 458,271,100.75
 Total positive residual load: 207,842,228.25    Total negative residual load: -1,002,976.00
@@ -4175,7 +4175,7 @@ Storage size 1: 119,667.00  RE share without storage: 0.55
 <span id="cb76-91"><a href="#cb76-91" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:  <span class="co"># Return residual load curves</span></span>
 <span id="cb76-92"><a href="#cb76-92" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> residual_load_after_discharge</span>
 <span id="cb76-93"><a href="#cb76-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb76-94"><a href="#cb76-94" aria-hidden="true" tabindex="-1"></a>calculate_renewable_share(residual_load, grid_load<span class="op">=</span>consumption[<span class="st">'Gesamt (Netzlast) [MWh]'</span>], charge_efficiency<span class="op">=</span><span class="fl">0.9</span>, discharge_efficiency<span class="op">=</span><span class="fl">0.9</span>, new_storage_capacitys<span class="op">=</span>[<span class="fl">0.9</span>, <span class="fl">0.8</span>, <span class="fl">0.7</span>, <span class="fl">0.6</span>, <span class="fl">0.5</span>], output<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb76-94"><a href="#cb76-94" aria-hidden="true" tabindex="-1"></a>calculate_renewable_share(residual_load, grid_load<span class="op">=</span>consumption[<span class="st">'Gesamt (Netzlast) [MWh]'</span>], charge_efficiency<span class="op">=</span><span class="fl">0.9</span>, discharge_efficiency<span class="op">=</span><span class="fl">0.9</span>, new_storage_capacitys<span class="op">=</span>[<span class="fl">0.9</span>, <span class="fl">0.8</span>, <span class="fl">0.7</span>, <span class="fl">0.6</span>, <span class="fl">0.5</span>], output<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Total grid load: 458,271,100.75
 Sum of positive residual load: 207,842,228.25   Sum of negative residual load: -1,002,976.00
@@ -4199,7 +4199,7 @@ Base storage size: 102,674.54   Renewable share without storage: 0.55
 </section>
 <section id="task-final-data-analysis" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="task-final-data-analysis"><span class="header-section-number">7.5</span> Task: Final Data Analysis</h2>
-<p><strong>Calculate the share of renewable electricity generation for the years 2030 and 2035 according to the expansion pathway specified by the federal government (see <a href="#lst-zubaufaktoren" class="quarto-xref">Code-Block&nbsp;<span>7.1</span></a>).</strong></p>
+<p><strong>Calculate the share of renewable electricity generation for the years 2030 and 2035 according to the expansion pathway specified by the federal government (see <a href="#lst-zubaufaktoren" class="quarto-xref">Code Block&nbsp;<span>7.1</span></a>).</strong></p>
 <ul>
 <li><p>What is the maximum storage capacity required?</p></li>
 <li><p>What share of renewable electricity generation is achieved if the storage is sized at half, one-tenth, or one-hundredth of the maximum capacity?</p></li>
@@ -4212,7 +4212,7 @@ Base storage size: 102,674.54   Renewable share without storage: 0.55
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warnung</span>Electricity Consumption Projections
+<span class="screen-reader-only">Warning</span>Electricity Consumption Projections
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -4222,7 +4222,7 @@ Base storage size: 102,674.54   Renewable share without storage: 0.55
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>load_factor_2035_MWh <span class="op">=</span> (<span class="fl">670.4</span> <span class="op">*</span> <span class="dv">1000</span> <span class="op">*</span> <span class="dv">1000</span>) <span class="op">/</span> consumption[<span class="st">"Gesamt (Netzlast) [MWh]"</span>].<span class="bu">sum</span>()</span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Increase in electricity consumption in 2030 compared to 2023 Factor: </span><span class="sc">{</span>load_factor_2030_MWh<span class="sc">:,.2f}</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Increase in electricity consumption in 2035 compared to 2023 Factor: </span><span class="sc">{</span>load_factor_2035_MWh<span class="sc">:,.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Increase in electricity consumption in 2035 compared to 2023 Factor: </span><span class="sc">{</span>load_factor_2035_MWh<span class="sc">:,.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Increase in electricity consumption in 2030 compared to 2023 Factor: 1.44
 Increase in electricity consumption in 2035 compared to 2023 Factor: 1.46</code></pre>
@@ -4239,7 +4239,7 @@ Increase in electricity consumption in 2035 compared to 2023 Factor: 1.46</code>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;7.2: Sample Solution: Closed Data Analysis Exercise
+Tip&nbsp;7.2: Sample Solution: Closed Data Analysis Exercise
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -4344,7 +4344,7 @@ Tipp&nbsp;7.2: Sample Solution: Closed Data Analysis Exercise
 <span id="cb80-91"><a href="#cb80-91" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Required storage capacity in 2035: </span><span class="sc">{</span>storage_2035_ms<span class="sc">:,.1f}</span><span class="ss"> MWh"</span>)</span>
 <span id="cb80-92"><a href="#cb80-92" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb80-93"><a href="#cb80-93" aria-hidden="true" tabindex="-1"></a>renewable_share_2035_ms <span class="op">=</span> calculate_renewable_share(residual_load_2035_ms, grid_load <span class="op">=</span> consumption_2035_ms[<span class="st">'Gesamt (Netzlast) [MWh]'</span>],</span>
-<span id="cb80-94"><a href="#cb80-94" aria-hidden="true" tabindex="-1"></a>                                     charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.88</span>, new_storage_capacitys <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>], output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb80-94"><a href="#cb80-94" aria-hidden="true" tabindex="-1"></a>                                     charge_efficiency <span class="op">=</span> <span class="fl">0.9</span>, discharge_efficiency <span class="op">=</span> <span class="fl">0.88</span>, new_storage_capacitys <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">0.1</span>, <span class="fl">0.01</span>], output <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Onshore Wind 2030:  2.00
 Offshore Wind 2030: 3.69
@@ -4428,7 +4428,7 @@ Base storage size: 23,829,823.85    Renewable share without storage: 0.81
 <span id="cb82-32"><a href="#cb82-32" aria-hidden="true" tabindex="-1"></a>calculate_curtailment_effect(residual_load_2030, charge_efficiency<span class="op">=</span>my_charge_efficiency, discharge_efficiency<span class="op">=</span>my_discharge_efficiency, new_storage_capacitys<span class="op">=</span>my_storage_capacitys, output<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb82-33"><a href="#cb82-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb82-34"><a href="#cb82-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-35"><a href="#cb82-35" aria-hidden="true" tabindex="-1"></a>calculate_renewable_share(residual_load_2030, grid_load<span class="op">=</span>grid_load_2030, charge_efficiency<span class="op">=</span>my_charge_efficiency, discharge_efficiency<span class="op">=</span>my_discharge_efficiency, new_storage_capacitys<span class="op">=</span>my_storage_capacitys, output<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb82-35"><a href="#cb82-35" aria-hidden="true" tabindex="-1"></a>calculate_renewable_share(residual_load_2030, grid_load<span class="op">=</span>grid_load_2030, charge_efficiency<span class="op">=</span>my_charge_efficiency, discharge_efficiency<span class="op">=</span>my_discharge_efficiency, new_storage_capacitys<span class="op">=</span>my_storage_capacitys, output<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Maximum required storage capacity 2030: 6,170,038.0 MWh
 This corresponds to 165.0 pumped storage equivalents.
@@ -4524,7 +4524,7 @@ Base storage size: 6,170,038.04 Renewable share without storage: 0.73
 <span id="cb84-28"><a href="#cb84-28" aria-hidden="true" tabindex="-1"></a>calculate_curtailment_effect(residual_load_2035, charge_efficiency<span class="op">=</span>my_charge_efficiency, discharge_efficiency<span class="op">=</span>my_discharge_efficiency, new_storage_capacitys<span class="op">=</span>my_storage_capacitys, output<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb84-29"><a href="#cb84-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb84-30"><a href="#cb84-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-31"><a href="#cb84-31" aria-hidden="true" tabindex="-1"></a>calculate_renewable_share(residual_load_2035, grid_load<span class="op">=</span>grid_load_2035, charge_efficiency<span class="op">=</span>my_charge_efficiency, discharge_efficiency<span class="op">=</span>my_discharge_efficiency, new_storage_capacitys<span class="op">=</span>my_storage_capacitys, output<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb84-31"><a href="#cb84-31" aria-hidden="true" tabindex="-1"></a>calculate_renewable_share(residual_load_2035, grid_load<span class="op">=</span>grid_load_2035, charge_efficiency<span class="op">=</span>my_charge_efficiency, discharge_efficiency<span class="op">=</span>my_discharge_efficiency, new_storage_capacitys<span class="op">=</span>my_storage_capacitys, output<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Maximum required storage capacity 2035: 23,829,823.9 MWh
 This corresponds to 637.2 pumped storage equivalents.
@@ -4637,7 +4637,7 @@ Base storage size: 23,829,823.85    Renewable share without storage: 0.81
 <span id="cb86-38"><a href="#cb86-38" aria-hidden="true" tabindex="-1"></a>grid_load_2035 <span class="op">=</span> grid_load_2023 <span class="op">*</span> load_factor_2035_MWh</span>
 <span id="cb86-39"><a href="#cb86-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb86-40"><a href="#cb86-40" aria-hidden="true" tabindex="-1"></a>residual_load_2035 <span class="op">=</span> pd.Series()</span>
-<span id="cb86-41"><a href="#cb86-41" aria-hidden="true" tabindex="-1"></a>residual_load_2035 <span class="op">=</span> grid_load_2035 <span class="op">-</span> renewables_2035</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb86-41"><a href="#cb86-41" aria-hidden="true" tabindex="-1"></a>residual_load_2035 <span class="op">=</span> grid_load_2035 <span class="op">-</span> renewables_2035</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>&nbsp;</p>
 <p>Based on the calculated residual load curves, 80%, 20%, and 4% configurations of the maximum required storage capacity are calculated and visualized.</p>
@@ -4847,7 +4847,7 @@ This corresponds to 25.5 pumped storage equivalents.</code></pre>
 <span id="cb93-49"><a href="#cb93-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb93-50"><a href="#cb93-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Print storage size</span></span>
 <span id="cb93-51"><a href="#cb93-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">The storage size is </span><span class="sc">{</span>storage_2030_80_eff_90_88[<span class="dv">0</span>]<span class="sc">:,.1f}</span><span class="ss"> MWh</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb93-52"><a href="#cb93-52" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"This corresponds to </span><span class="sc">{</span>storage_2030_80_eff_90_88[<span class="dv">0</span>] <span class="op">/</span> pumped_storage_capacity_MWh<span class="sc">:,.1f}</span><span class="ss"> pumped storage equivalents."</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb93-52"><a href="#cb93-52" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"This corresponds to </span><span class="sc">{</span>storage_2030_80_eff_90_88[<span class="dv">0</span>] <span class="op">/</span> pumped_storage_capacity_MWh<span class="sc">:,.1f}</span><span class="ss"> pumped storage equivalents."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -4878,7 +4878,7 @@ This corresponds to 25.5 pumped storage equivalents.</code></pre>
 <span id="cb94-11"><a href="#cb94-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Peak power 2030 for Cmax = 0.20: </span><span class="sc">{</span><span class="bu">max</span>(peak_power_2030.iloc[<span class="dv">1</span>, <span class="dv">1</span>]) <span class="op">*</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">1000</span><span class="sc">:.2f}</span><span class="ss"> GW</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb94-12"><a href="#cb94-12" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Peak power 2030 for Cmax = 0.04: </span><span class="sc">{</span><span class="bu">max</span>(peak_power_2030.iloc[<span class="dv">1</span>, <span class="dv">2</span>]) <span class="op">*</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">1000</span><span class="sc">:.2f}</span><span class="ss"> GW</span><span class="ch">\n</span><span class="ss">"</span></span>
 <span id="cb94-13"><a href="#cb94-13" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Peak power 2035 for Cmax = 0.20: </span><span class="sc">{</span><span class="bu">max</span>(peak_power_2035.iloc[<span class="dv">1</span>, <span class="dv">1</span>]) <span class="op">*</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">1000</span><span class="sc">:.2f}</span><span class="ss"> GW</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb94-14"><a href="#cb94-14" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Peak power 2035 for Cmax = 0.04: </span><span class="sc">{</span><span class="bu">max</span>(peak_power_2035.iloc[<span class="dv">1</span> , <span class="dv">2</span>]) <span class="op">*</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">1000</span><span class="sc">:.2f}</span><span class="ss"> GW"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb94-14"><a href="#cb94-14" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"Peak power 2035 for Cmax = 0.04: </span><span class="sc">{</span><span class="bu">max</span>(peak_power_2035.iloc[<span class="dv">1</span> , <span class="dv">2</span>]) <span class="op">*</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">1000</span><span class="sc">:.2f}</span><span class="ss"> GW"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Peak power 2030 for Cmax = 0.20: 87.64 GW
@@ -4953,7 +4953,7 @@ date_pd = pd.to_datetime(date_str, format = " ... ")
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tipp&nbsp;9.1: Solutions
+Tip&nbsp;9.1: Solutions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -4981,13 +4981,13 @@ Tipp&nbsp;9.1: Solutions
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-energy-charts-strom" class="csl-entry" role="listitem">
-Fraunhofer Institut für Solare Energiesysteme ISE. o.&nbsp;J. <span>„Öffentliche Nettostromerzeugung in Deutschland“</span>. Zugegriffen 3. Juni 2024. <a href="https://energy-charts.info/charts/energy/chart.htm?l=de&amp;c=DE&amp;chartColumnSorting=default&amp;year=-1&amp;interval=year&amp;legendItems=lz1zb&amp;source=public">https://energy-charts.info/charts/energy/chart.htm?l=de&amp;c=DE&amp;chartColumnSorting=default&amp;year=-1&amp;interval=year&amp;legendItems=lz1zb&amp;source=public</a>.
+Fraunhofer Institut für Solare Energiesysteme ISE. n.d. <span>“Öffentliche Nettostromerzeugung in Deutschland.”</span> Accessed June 3, 2024. <a href="https://energy-charts.info/charts/energy/chart.htm?l=de&amp;c=DE&amp;chartColumnSorting=default&amp;year=-1&amp;interval=year&amp;legendItems=lz1zb&amp;source=public">https://energy-charts.info/charts/energy/chart.htm?l=de&amp;c=DE&amp;chartColumnSorting=default&amp;year=-1&amp;interval=year&amp;legendItems=lz1zb&amp;source=public</a>.
 </div>
 <div id="ref-Heimerl-Kohler-2017-Pumpspeicher-in-Deutschland" class="csl-entry" role="listitem">
-Heimerl, Stephan, und Beate Kohler. 2017. <span>„Aktueller Stand der Pumpspeicherkraftwerke in Deutschland“</span>. Bd. 10. WasserWirtschaft. <a href="https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf">https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf</a>.
+Heimerl, Stephan, and Beate Kohler. 2017. <span>“Aktueller Stand Der Pumpspeicherkraftwerke in Deutschland.”</span> Vol. 10. WasserWirtschaft. <a href="https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf">https://www.fwt.fichtner.de/userfiles/fileadmin-fwt/Publikationen/WaWi_2017_10_Heimerl_Kohler_PSKW.pdf</a>.
 </div>
 <div id="ref-R-for-Data-Science" class="csl-entry" role="listitem">
-Wickham, Hadley, Mine Çetinkaya-Rundel, und Garrett Grolemund. 2023. <span>„R for data science: Import, tidy, transform, visualize, and model data“</span>. 2nd edition. O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
+Wickham, Hadley, Mine Çetinkaya-Rundel, and Garrett Grolemund. 2023. <span>“R for Data Science: Import, Tidy, Transform, Visualize, and Model Data.”</span> 2nd edition. O’Reilly. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
 </div>
 </section>
@@ -5019,12 +5019,12 @@ Wickham, Hadley, Mine Çetinkaya-Rundel, und Garrett Grolemund. 2023. <span>„R
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Kopiert");
+      button.setAttribute("title", "Copied!");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Kopiert");
+        button.setAttribute("data-bs-title", "Copied!");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -5408,4 +5408,4 @@ Wickham, Hadley, Mine Çetinkaya-Rundel, und Garrett Grolemund. 2023. <span>„R
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse/blob/main/skript/energiedatenanalyse.qmd" class="toc-action"><i class="bi bi-github"></i>Quellcode anzeigen</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse-en/blob/main/skript/energiedatenanalyse.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
