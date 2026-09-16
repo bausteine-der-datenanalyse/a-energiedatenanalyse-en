@@ -1,6 +1,6 @@
 # Prerequisites
 
-The processing time for this module is approximately **placeholder**. The following modules are required for completing this unit, and the listed libraries are used:
+The processing time for this module is approximately **10 hours**. The following modules are required for completing this unit, and the listed libraries are used:
 
 - Tool Module: Python
 

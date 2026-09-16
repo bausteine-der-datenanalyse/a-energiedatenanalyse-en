@@ -514,7 +514,7 @@ print(df.iloc[:, 5:10].describe(include=np.number))
 print(df.iloc[:, 10:15].describe(include=np.number))
 ```
 
-:::: {.callout-tip title="Musterlösung Strommarktdaten Österreich" collapse="true"}
+:::: {.callout-tip title="Sample Solution: Electricity Market Data Austria" collapse="true"}
 
 ::::: {.border}
 ```{python}
@@ -1872,7 +1872,7 @@ print(austria_generation.dtypes)
 
 :::
 
-::: {.callout-tip title="Musterlösung Aufgabe explorative Datenanalyse" collapse="true"}
+::: {.callout-tip title="Sample Solution: Exploratory Data Analysis Exercise" collapse="true"}
 
 :::: {.border}
 ::::: {.panel-tabset}
@@ -1906,7 +1906,7 @@ generation0_austria_ms['Zeit von [CET/CEST]'] = pd.to_datetime(
     generation0_austria_ms['Zeit von [CET/CEST]'], format="%d.%m.%Y %H:%M:%S"
 )
 
-## Column "Time to [CET/CEST]"
+## Column "Zeit bis [CET/CEST]"
 generation0_austria_ms['Zeit bis [CET/CEST]'] = generation0_austria_ms['Zeit bis [CET/CEST]'].str.replace(pat='2A', repl='02')
 generation0_austria_ms['Zeit bis [CET/CEST]'] = generation0_austria_ms['Zeit bis [CET/CEST]'].str.replace(pat='2B', repl='02')
 
@@ -2185,7 +2185,7 @@ pumped_storage_capacity_MWh = 37.4 * 1000
 
 &nbsp;
 
-::: {#tip-Testdaten .callout-tip collapse="false" title="Funktionsentwicklung mit Testdaten"}
+::: {#tip-Testdaten .callout-tip collapse="false" title="Function Development with Test Data"}
 
 
 
@@ -2743,7 +2743,7 @@ After determining the storage capacity, the annual storage profile for the first
 ```{python}
 # Calculate annual storage profile
 ## Input: data = pd.Series(data, dtype='float'), storage_capacity=-1, output=False
-## Processing: If storage_capacity=-1, the storage size is determined with the functicapacity(data)
+## Processing: If storage_capacity=-1, the storage size is determined with the function calculate_storage_capacity(data)
 ## Processing: data is concatenated twice to data_x2.
 ## Processing: Based on the storage capacity, the storage level and free capacity are calculated for all data values for year 1 and all following years.
 ## Output: If output=False, returns a tuple with storage_capacity (float), storage_level_year1 (pd.Series), storage_level_year2 (pd.Series)
@@ -2887,7 +2887,7 @@ plt.show()
 ``` {python}
 # Calculate annual storage cycle
 ## Input: data = pd.Series(data, dtype = 'float'), storage_capacity = -1, charge_efficiency = 1, discharge_efficiency = 1, output = False
-## Processing: If storage_capacity = -1, the storage size is calculated with the functicapacity(data).
+## Processing: If storage_capacity = -1, the storage size is calculated with the function calculate_storage_capacity(data).
 ## Processing: data is concatenated twice to data_x2.
 ## Processing: Based on the storage size, the state of charge and free capacity are calculated for all values of data for Year1 and all following years.
 ## Output: If output is False, a tuple of storage_capacity (float), state of charge Year1 (pd.Series), state of charge Year2 (pd.Series) is returned.
@@ -4513,8 +4513,3 @@ Calculate the required storage size (charging efficiency = 0.9, discharging effi
   - What is the maximum required electricity generation capacity of the biomass plants, both absolute and relative to the installed 2023 capacity?
 
   - How large does the required electricity storage need to be if biomass power plants are operated in load-following mode?
-
-
-
-
-
