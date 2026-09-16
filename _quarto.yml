@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Anwendungsbaustein Energiedatenanalyse"
+  title: "Energy Data Analysis Application Module"
   author:
     - Lukas Arnold
     - Simone Arnold
@@ -13,19 +13,19 @@ book:
     - Maik Poetzsch
     - Sebastian Seipel
   date: today
-  language: de-DE
+  language: en-US
   downloads: [pdf]
-  repo-url: "https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse"
+  repo-url: "https://github.com/bausteine-der-datenanalyse/a-energiedatenanalyse-en"
   repo-actions: [source]
   favicon: "skript/00-bilder/favicon_bcd_new.svg"
   sidebar:
-    title: "Anwendungsbaustein Energiedatenanalyse"
+    title: "Energy Data Analysis Application Module"
     logo: "skript/00-bilder/logo_with_text_new.svg"
 
 ## Inhaltsverzeichnis / table of contents
 toc: true
 toc-title:  |
-  Anwendungsbaustein Energiedatenanalyse 
+  Energy Data Analysis Application Module 
 
   ![](skript/00-bilder/logo_with_text_new.svg)
 number-sections: true
@@ -41,25 +41,25 @@ fig-asp: 0.618
 format:
   html:
     theme: [cosmo, theme.scss]
-    lang: de
+    lang: en
     language:
-      de:
+      en:
         crossref-imp-title: "Definition"
         crossref-imp-prefix: "Definition"
-        crossref-lst-title: "Code-Block"
-        crossref-lst-prefix: "Code-Block"
-        crossref-nte-title: "Beispiel"
-        crossref-nte-prefix: "Beispiel"
-        crossref-tip-title: "Tipp"
-        crossref-tip-prefix: "Tipp"
-        crossref-wrn-title: "Hinweis"
-        crossref-wrn-prefix: "Hinweis"
+        crossref-lst-title: "Code Block"
+        crossref-lst-prefix: "Code Block"
+        crossref-nte-title: "Example"
+        crossref-nte-prefix: "Example"
+        crossref-tip-title: "Tip"
+        crossref-tip-prefix: "Tip"
+        crossref-wrn-title: "Note"
+        crossref-wrn-prefix: "Note"
         tbl-cap-location: bottom
   pdf:
     documentclass: scrreprt
     cite-method: biblatex
-    biblio-title: Quellen
-    lang: de
+    biblio-title: References
+    lang: en
     toc-depth: 1
 
 execute:
@@ -69,4 +69,3 @@ profile:
   default: full
   group: 
     - [full]
-
